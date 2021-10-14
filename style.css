@@ -129,3 +129,18 @@ input {
   color: goldenrod;
   padding: 1rem 5rem;
 }
+
+.guessPass {
+  display: flex;
+  justify-content: center;
+}
+
+.playerButtons {
+  height: 2.5rem;
+  width: 8rem;
+  margin: 0 1rem;
+  background-color: rgb(152, 15, 170);
+  color: ghostwhite;
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
