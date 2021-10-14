@@ -1,3 +1,4 @@
+/* global styles for all pages*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,6 +8,8 @@
 :root {
   --font-size: 16px;
 }
+
+/* styles for index.html */
 html {
   background: url(img/alex-trebek.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -54,4 +57,14 @@ h1 {
   font-size: 1.5em;
   color: whitesmoke;
   filter: drop-shadow(2px 2px 2px black);
+}
+
+/* styles for round-1.html & round-2.html */
+
+.game-background {
+  background: url(img/jeopardy-background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
