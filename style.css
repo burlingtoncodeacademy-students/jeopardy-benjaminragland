@@ -131,6 +131,7 @@ input {
 }
 
 .guessPass {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -143,4 +144,18 @@ input {
   color: ghostwhite;
   font-size: 1.5rem;
   border-radius: 5px;
+}
+
+.continue {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+.nextRound {
+  background-color: rgb(152, 15, 170);
+  color: ghostwhite;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: 0.2rem;
 }
