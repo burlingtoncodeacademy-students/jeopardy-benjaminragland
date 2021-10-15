@@ -80,7 +80,7 @@ h1 {
   display: grid;
   background-color: blue;
   width: 80vw;
-  height: 70vh;
+  height: 67vh;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1em;
@@ -158,4 +158,77 @@ input {
   font-size: 1.5rem;
   border-radius: 5px;
   padding: 0.2rem;
+}
+
+/* styles for final jeopardy */
+
+#final-flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100vw;
+}
+
+.final-category {
+  width: 46vw;
+  height: 4rem;
+  background-color: blue;
+  border: 2px solid;
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+.final-answer {
+  width: 46vw;
+  height: 22rem;
+  background-color: blue;
+  border: 2px solid;
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+#final-bet-container {
+  display: flex;
+  width: 46vw;
+  height: 15rem;
+}
+
+.input-div {
+  display: flex;
+  width: 23vw;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 17vh;
+  padding-top: 2rem;
+}
+
+.button-div {
+  display: flex;
+  width: 23vw;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.final-bet-button {
+  height: 8.4rem;
+  width: 15rem;
+  background-color: rgb(152, 15, 170);
+  color: ghostwhite;
+  font-size: 2.5rem;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.final-category-text {
+  color: ghostwhite;
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 0.8rem;
+}
+
+.final-answer-text {
+  color: ghostwhite;
+  text-align: center;
+  padding-top: 3rem;
+  font-size: 4.5rem;
 }
