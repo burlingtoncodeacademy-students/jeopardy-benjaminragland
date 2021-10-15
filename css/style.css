@@ -12,7 +12,7 @@
 
 /* styles for index.html */
 html {
-  background: url(img/alex-trebek.jpeg) no-repeat center center fixed;
+  background: url(../img/alex-trebek.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -63,7 +63,7 @@ h1 {
 /* styles for round-1.html & round-2.html */
 
 .game-background {
-  background: url(img/jeopardy-background.jpg) no-repeat center center fixed;
+  background: url(../img/jeopardy-background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
