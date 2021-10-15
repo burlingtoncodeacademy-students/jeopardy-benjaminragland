@@ -6,6 +6,10 @@
   font-family: gyparody;
 }
 
+.fade-in {
+  animation: fade-in 2.5s;
+}
+
 :root {
   --font-size: 16px;
 }
@@ -231,4 +235,13 @@ input {
   text-align: center;
   padding-top: 3rem;
   font-size: 4.5rem;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
