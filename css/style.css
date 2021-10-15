@@ -7,14 +7,14 @@
 }
 
 .fade-in {
-  animation: fade-in 2.5s;
+  animation: fade-in 2s;
 }
 
 :root {
   --font-size: 16px;
 }
 
-/* styles for index.html */
+/* ~~~~~~~~~~~~~~~ styles for index.html ~~~~~~~~~~~~~~~ */
 html {
   background: url(../img/alex-trebek.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -23,13 +23,14 @@ html {
   background-size: cover;
 }
 
-#welcome-div {
+/* flex container for welcome message and start button */
+.container {
+  flex-direction: column;
   display: flex;
-  justify-content: center;
+  height: 90vh;
+  width: 100vw;
+  justify-content: flex-end;
   align-items: center;
-  align-self: center;
-  background-color: azure;
-  opacity: 0.2;
 }
 
 .rounded-div {
@@ -44,15 +45,6 @@ h1 {
   padding: 0.25em;
 }
 
-.container {
-  flex-direction: column;
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  justify-content: flex-end;
-  align-items: center;
-}
-
 .start-button {
   width: 20em;
   height: 3em;
@@ -64,7 +56,7 @@ h1 {
   filter: drop-shadow(2px 2px 2px black);
 }
 
-/* styles for round-1.html & round-2.html */
+/* ~~~~~~~~~~~~~~~ styles for round-1.html & round-2.html ~~~~~~~~~~~~~~~ */
 
 .game-background {
   background: url(../img/jeopardy-background.jpg) no-repeat center center fixed;
@@ -164,8 +156,9 @@ input {
   padding: 0.2rem;
 }
 
-/* styles for final jeopardy */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ styles for final jeopardy ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+/* con */
 #final-flex-container {
   display: flex;
   flex-direction: column;
@@ -191,6 +184,7 @@ input {
   filter: drop-shadow(2px 2px 2px black);
 }
 
+/* contains inputs for final wager, answer input, and guess button */
 #final-bet-container {
   display: flex;
   width: 46vw;
@@ -223,6 +217,7 @@ input {
   margin-top: 2rem;
 }
 
+/* text styles for final answer and category */
 .final-category-text {
   color: ghostwhite;
   text-align: center;
@@ -234,9 +229,10 @@ input {
   color: ghostwhite;
   text-align: center;
   padding-top: 3rem;
-  font-size: 4.5rem;
+  font-size: 3.5rem;
 }
 
+/* animation for fade in of body elements */
 @keyframes fade-in {
   0% {
     opacity: 0;
