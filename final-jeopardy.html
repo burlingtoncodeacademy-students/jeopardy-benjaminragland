@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jeopardy</title>
+    <!-- audio currently disabled. Will add JS funtion to play when question appears next phase -->
     <audio src="./audio/Jeopardy-theme-song/Jeopardy-theme-song.mp3"></audio>
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -22,13 +23,13 @@
         </p>
       </div>
       <div id="final-bet-container">
-        <div class="input-div">
+        <form class="final-input" action="">
           <input type="text" placeholder="Your wager..." />
-          <input type="text" placeholder="What is?..." />
-        </div>
-        <div class="button-div">
-          <button class="final-bet-button">Guess</button>
-        </div>
+          <input class="input-margin" type="text" placeholder="What is?..." />
+        </form>
+        <form class="final-button" action="">
+          <button class="final-bet-button" disabled>Guess</button>
+        </form>
       </div>
     </div>
   </body>
