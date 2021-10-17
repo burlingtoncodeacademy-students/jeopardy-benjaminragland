@@ -126,6 +126,17 @@ input {
   padding: 1rem 5rem;
 }
 
+/* Plain to make red and green border alternate with JS in next phase to indicate turns */
+.playerOneTurn {
+  border: 3px solid green;
+  border-radius: 5px;
+}
+
+.playerTwoTurn {
+  border: 3px solid red;
+  border-radius: 5px;
+}
+
 .guessPass {
   width: 100%;
   display: flex;
