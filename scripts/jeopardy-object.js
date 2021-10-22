@@ -1,5 +1,50 @@
 // round one category one question/answers/amounts
+let roundOneCategoryOne = [
+  {
+    id: "Cat1Quest1",
+    category: "Chillin’ & Grillin’",
+    amount: 200,
+    question:
+      "Weber is a well-known maker of this essential feature of a backyard barbecue.",
+    answer: "What is a grill?",
+  },
 
+  {
+    id: "Cat1Quest2",
+    category: "Chillin’ & Grillin’",
+    amount: 400,
+    question:
+      "The name of this flying creature describes slicing a slab of meat nearly in half and unfolding it flat.",
+    answer: "What is butterfly?",
+  },
+
+  {
+    id: "Cat1Quest3",
+    category: "Chillin’ & Grillin’",
+    amount: 600,
+    question:
+      "Manual ice cream machines require adding this condiment to the ice before churning the ingredients.",
+    answer: "What is salt?",
+  },
+
+  {
+    id: "Cat1Quest4",
+    category: "Chillin’ & Grillin’",
+    amount: 800,
+    question:
+      "This is the term for applying a seasoned liquid while grilling to keep the food soft and moist. ",
+    answer: "What is basting (or mopping)?",
+  },
+
+  {
+    id: "Cat1Quest5",
+    category: "Chillin’ & Grillin’",
+    amount: 1000,
+    question:
+      "Salmon is often grilled on this type of wood plank to add flavor. ",
+    answer: "What is cedar?",
+  },
+];
 // round one category two question/answers/amounts
 let roundOneCategoryTwo = [
   {
