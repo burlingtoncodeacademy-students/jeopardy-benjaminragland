@@ -127,14 +127,21 @@ input {
 }
 
 /* Plain to make red and green border alternate with JS in next phase to indicate turns */
-.playerOneTurn {
+/* #playerOneTurn {
   border: 3px solid green;
   border-radius: 5px;
 }
 
-.playerTwoTurn {
+#playerTwoTurn {
   border: 3px solid red;
   border-radius: 5px;
+} */
+
+#player-turn {
+  height: 1.5em;
+  width: 8.5em;
+  margin-left: 2em;
+  text-align: center;
 }
 
 .guessPass {
@@ -155,7 +162,7 @@ input {
 
 .continue {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-right: 2rem;
 }
 
@@ -251,4 +258,12 @@ input {
   100% {
     opacity: 1;
   }
+}
+
+#question1 {
+  font-size: 0.4em;
+}
+
+.answer {
+  font-size: 0;
 }

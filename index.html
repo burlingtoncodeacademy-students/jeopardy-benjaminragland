@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jeopardy</title>
     <!-- jeopardy theme autoplays upon opening -->
-    <audio controls autoplay loop>
+    <audio controls loop>
       <source src="audio/Jeopardy-theme-song/Jeopardy-theme-song.mp3" />
     </audio>
     <link rel="stylesheet" href="css/style.css" />
@@ -16,9 +16,8 @@
       <div class="rounded-div">
         <h1>Welcome to Jeopardy!</h1>
       </div>
-      <a href="round-1.html"
-        ><button class="start-button">Start Game</button></a
-      >
+      <button id="game-start" class="start-button">Start Game</button>
     </main>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

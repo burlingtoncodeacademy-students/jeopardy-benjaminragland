@@ -21,43 +21,45 @@
       <div class="grid-item category"><p>RANDOM CATEGORY</p></div>
 
       <!-- dollar value divs -->
-      <div class="grid-item dollarValue"><p>$100</p></div>
-      <div class="grid-item dollarValue"><p>$100</p></div>
-      <div class="grid-item dollarValue"><p>$100</p></div>
-      <div class="grid-item dollarValue"><p>$100</p></div>
-      <div class="grid-item dollarValue"><p>$100</p></div>
-      <div class="grid-item dollarValue"><p>$100</p></div>
+      <div id="Cat1Quest1" class="grid-item dollarValue">
+        <p class="money">$200</p>
+        <p class="answer">here is an answer</p>
+      </div>
       <div class="grid-item dollarValue"><p>$200</p></div>
       <div class="grid-item dollarValue"><p>$200</p></div>
       <div class="grid-item dollarValue"><p>$200</p></div>
       <div class="grid-item dollarValue"><p>$200</p></div>
-      <div class="grid-item dollarValue"><p>$200</p></div>
-      <div class="grid-item dollarValue"><p>$200</p></div>
-      <div class="grid-item dollarValue"><p>$300</p></div>
-      <div class="grid-item dollarValue"><p>$300</p></div>
-      <div class="grid-item dollarValue"><p>$300</p></div>
-      <div class="grid-item dollarValue"><p>$300</p></div>
-      <div class="grid-item dollarValue"><p>$300</p></div>
-      <div class="grid-item dollarValue"><p>$300</p></div>
       <div class="grid-item dollarValue"><p>$400</p></div>
       <div class="grid-item dollarValue"><p>$400</p></div>
       <div class="grid-item dollarValue"><p>$400</p></div>
       <div class="grid-item dollarValue"><p>$400</p></div>
       <div class="grid-item dollarValue"><p>$400</p></div>
       <div class="grid-item dollarValue"><p>$400</p></div>
-      <div class="grid-item dollarValue"><p>$500</p></div>
-      <div class="grid-item dollarValue"><p>$500</p></div>
-      <div class="grid-item dollarValue"><p>$500</p></div>
-      <div class="grid-item dollarValue"><p>$500</p></div>
-      <div class="grid-item dollarValue"><p>$500</p></div>
-      <div class="grid-item dollarValue"><p>$500</p></div>
+      <div class="grid-item dollarValue"><p>$600</p></div>
+      <div class="grid-item dollarValue"><p>$600</p></div>
+      <div class="grid-item dollarValue"><p>$600</p></div>
+      <div class="grid-item dollarValue"><p>$600</p></div>
+      <div class="grid-item dollarValue"><p>$600</p></div>
+      <div class="grid-item dollarValue"><p>$600</p></div>
+      <div class="grid-item dollarValue"><p>$800</p></div>
+      <div class="grid-item dollarValue"><p>$800</p></div>
+      <div class="grid-item dollarValue"><p>$800</p></div>
+      <div class="grid-item dollarValue"><p>$800</p></div>
+      <div class="grid-item dollarValue"><p>$800</p></div>
+      <div class="grid-item dollarValue"><p>$800</p></div>
+      <div class="grid-item dollarValue"><p>$1000</p></div>
+      <div class="grid-item dollarValue"><p>$1000</p></div>
+      <div class="grid-item dollarValue"><p>$1000</p></div>
+      <div class="grid-item dollarValue"><p>$1000</p></div>
+      <div class="grid-item dollarValue"><p>$1000</p></div>
+      <div class="grid-item dollarValue"><p>$1000</p></div>
     </div>
 
     <!-- divs for question input and guess/pass buttons -->
     <div class="question-box">
-      <h2 class="playerScore playerOneTurn">Player One: Score</h2>
+      <h2 id="playerOneTurn" class="playerScore">Player One: Score</h2>
       <input type="text" placeholder="What is?..." />
-      <h2 class="playerScore playerTwoTurn">Player Two: Score</h2>
+      <h2 id="playerTwoTurn" class="playerScore">Player Two: Score</h2>
     </div>
 
     <!-- buttons for guess and pass -->
@@ -68,9 +70,11 @@
 
     <!-- button to continue to double jeopardy -->
     <div class="continue">
+      <div id="player-turn" class="nextRound"></div>
       <a href="round-2.html"
         ><button class="nextRound">Double Jeopardy</button></a
       >
     </div>
+    <script src="./scripts/round-1.js"></script>
   </body>
 </html>
