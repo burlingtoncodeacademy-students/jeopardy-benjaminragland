@@ -6,7 +6,7 @@ let roundOneCategoryOne = [
     amount: 200,
     question:
       "Weber is a well-known maker of this essential feature of a backyard barbecue.",
-    answer: "What is a grill?",
+    answer: "What is a grill",
   },
 
   {

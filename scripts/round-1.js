@@ -4,6 +4,9 @@ playerOneScore = 0;
 playerTwoScore = 0;
 let questionCount = 0;
 let playerTurn = "Player One";
+let thisItem;
+let playerAnswer;
+let currentAnswer;
 let clicked = Array.from(document.getElementsByClassName("dollarValue"));
 let disabledGuess = document.getElementById("roundOneGuess");
 let disabledPass = document.getElementById("roundOnePass");
@@ -63,15 +66,22 @@ function Jeopardy() {
       //looks for matching id in array of question/answer objects & adds the question text to tile
       let findItem = (arr) =>
         arr.find((item) => Object.values(item).includes(clickedItem));
-      let thisItem = findItem(roundOneCategoryOne);
+      thisItem = findItem(roundOneCategoryOne);
       styler(fill);
       fill.textContent = thisItem.question;
       enableButtons();
+      clicked.disabled = true;
+      console.log(thisItem);
     });
   });
 
   playerGuess.addEventListener("click", () => {
-    let currentAnswer = answerInput.value;
-    console.log(currentAnswer);
+    questionCount++;
+    playerAnswer = answerInput.value.toLowerCase();
+    currentAnswer = thisItem.answer.toLowerCase();
+    if (currentAnswer.includes(playerAnswer)) {
+      console.log(thisItem.amount);
+      answerInput.value = "";
+    }
   });
 }
