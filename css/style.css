@@ -94,6 +94,8 @@ h1 {
 .category {
   color: ghostwhite;
   font-size: 1.2rem;
+  text-align: center;
+  padding-top: 1.5em;
 }
 
 .dollarValue {
