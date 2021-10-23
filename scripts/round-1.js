@@ -92,6 +92,8 @@ function Jeopardy() {
         questionFill.textContent = thisItem.question;
         enableButtons();
         disableClicks();
+
+        console.log(thisItem);
       });
     });
   }
@@ -101,11 +103,12 @@ function Jeopardy() {
     questionCount++;
     playerAnswer = answerInput.value.toLowerCase();
     currentAnswer = thisItem.answer.toLowerCase();
-    if (currentAnswer.includes(playerAnswer)) {
+    if (currentAnswer === playerAnswer) {
       //clears question and answer and enables clicks for next turn
       answerInput.value = "";
       questionFill.textContent = "";
 
+      //updates score for current player if answer is correct
       if (playerTurn === "Player One") {
         playerOneScore += thisItem.amount;
         playerOne.textContent = `Player One Score: ${playerOneScore}`;
@@ -115,6 +118,30 @@ function Jeopardy() {
         enableClicks();
       } else if ((playerTurn = "Player Two")) {
         playerTwoScore += thisItem.amount;
+        playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
+        playerTurn = "Player One";
+        turn.textContent = `Turn: ${playerTurn}`;
+        disableButtons();
+        enableClicks();
+      }
+    }
+
+    //updates score for current player if answer is incorrect
+    if (currentAnswer !== playerAnswer) {
+      //clears question and answer and enables clicks for next turn
+      answerInput.value = "";
+      questionFill.textContent = "";
+
+      //updates score for current player if answer is incorrect
+      if (playerTurn === "Player One") {
+        playerOneScore -= thisItem.amount;
+        playerOne.textContent = `Player One Score: ${playerOneScore}`;
+        playerTurn = "Player Two";
+        turn.textContent = `Turn: ${playerTurn}`;
+        disableButtons();
+        enableClicks();
+      } else if (playerTurn === "Player Two") {
+        playerTwoScore -= thisItem.amount;
         playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
         playerTurn = "Player One";
         turn.textContent = `Turn: ${playerTurn}`;
