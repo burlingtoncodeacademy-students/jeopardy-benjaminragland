@@ -3,6 +3,7 @@ let timerCount = 300;
 let secondCount = 15;
 let speed = 1000;
 let countDiv = document.getElementById("timer");
+let guessTimerDiv = document.getElementById("guess-timer");
 let minutes = timerCount / 60;
 let seconds = (timerCount % 60) + "0";
 let timerExpired;
@@ -19,6 +20,7 @@ let questionFill;
 let thisItem;
 let playerAnswer;
 let currentAnswer;
+let timedOut = 0;
 
 //document method declarations
 let gridContainer = document.getElementById("grid-container");
@@ -91,7 +93,7 @@ function Jeopardy() {
     interval = setInterval(fiveMinCount, speed);
 
     function fiveMinCount() {
-      countDiv.textContent = `${minutes.toString()}: ${seconds.toString()}`;
+      countDiv.textContent = `Round: ${minutes.toString()}: ${seconds.toString()}`;
       count--;
       minutes = Math.floor(count / 60);
       seconds = count % 60;
@@ -111,13 +113,56 @@ function Jeopardy() {
     tick = setInterval(fiveSecondCount, speed);
 
     function fiveSecondCount() {
+      guessTimerDiv.textContent = count;
       count--;
 
       //logic for determining whether to pass turn if guessTimer runs out
-      if (count === 0) {
+      if (count < 0) {
+        clearInterval(tick);
+        guessTimerDiv.textContent = "";
+
         if (playerTurn === "Player One" && guessPassed === true) {
           playerOneScore -= thisItem.amount;
           playerOne.textContent = `Player One Score: ${playerOneScore}`;
+          playerTurn = "Player Two";
+          guessTimerDiv.textContent = "";
+          questionFill.textContent = "";
+          turn.textContent = `Turn: ${playerTurn}`;
+          enableClicks();
+        } else if (playerTurn === "Player Two" && guessPassed === true) {
+          playerTwoScore -= thisItem.amount;
+          playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
+          playerTurn = "Player One";
+          guessTimerDiv.textContent = "";
+          questionFill.textContent = "";
+          turn.textContent = `Turn: ${playerTurn}`;
+          enableClicks();
+        }
+
+        if (playerTurn === "Player One" && guessPassed === false) {
+          playerOneScore -= thisItem.amount;
+          playerOne.textContent = `Player One Score: ${playerOneScore}`;
+          playerTurn = "Player Two";
+          turn.textContent = `Turn: ${playerTurn}`;
+          timedOut++;
+          clearInterval(tick);
+          guessTimer(secondCount);
+        } else if (playerTurn === "Player Two" && guessPassed === false) {
+          playerTwoScore -= thisItem.amount;
+          playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
+          playerTurn = "Player One";
+          turn.textContent = `Turn: ${playerTurn}`;
+          timedOut++;
+          clearInterval(tick);
+          guessTimer(secondCount);
+        }
+
+        if (timedOut === 2) {
+          clearInterval(tick);
+          guessTimerDiv.textContent = "";
+          questionFill.textContent = "";
+          enableClicks();
+          disableButtons();
         }
       }
     }
@@ -137,6 +182,7 @@ function Jeopardy() {
         enableButtons();
         disableClicks();
         guessTimer(secondCount);
+        guessPassed = false;
         timerExpired = false;
         console.log(thisItem);
       });
@@ -149,17 +195,20 @@ function Jeopardy() {
       passCount++;
       playerTurn = "Player Two";
       turn.textContent = `Turn: ${playerTurn}`;
-      // guessPassed = true;
+      clearInterval(tick);
+      guessPassed = true;
       guessTimer(secondCount);
     } else if (playerTurn === "Player Two") {
       passCount++;
       playerTurn = "Player One";
       turn.textContent = `Turn: ${playerTurn}`;
-      // guessPassed = true;
+      clearInterval(tick);
+      guessPassed = true;
       guessTimer(secondCount);
     }
     if (passCount === 2) {
       clearInterval(tick);
+      guessTimerDiv.textContent = "";
       questionFill.textContent = "";
       enableClicks();
       passCount = 0;
@@ -221,7 +270,7 @@ function Jeopardy() {
     questionCount++;
 
     //ends round if all tiles have been selected *** need to add functionality to go to round 2 ***
-    if (questionCount === 3) {
+    if (questionCount === 30) {
       alert("round over!");
     }
   });
