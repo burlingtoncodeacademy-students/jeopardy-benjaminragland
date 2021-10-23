@@ -98,6 +98,17 @@ function Jeopardy() {
     });
   }
 
+  //switch players if current player pushes pass button
+  playerPass.addEventListener("click", () => {
+    if (playerTurn === "Player One") {
+      playerTurn = "Player Two";
+      turn.textContent = `Turn: ${playerTurn}`;
+    } else if (playerTurn === "Player Two") {
+      playerTurn = "Player One";
+      turn.textContent = `Turn: ${playerTurn}`;
+    }
+  });
+
   //assigns player's answer to variable. checks that against correct answer.
   playerGuess.addEventListener("click", () => {
     questionCount++;
@@ -112,15 +123,13 @@ function Jeopardy() {
       if (playerTurn === "Player One") {
         playerOneScore += thisItem.amount;
         playerOne.textContent = `Player One Score: ${playerOneScore}`;
-        playerTurn = "Player Two";
-        turn.textContent = `Turn: ${playerTurn}`;
+
         disableButtons();
         enableClicks();
       } else if ((playerTurn = "Player Two")) {
         playerTwoScore += thisItem.amount;
         playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
-        playerTurn = "Player One";
-        turn.textContent = `Turn: ${playerTurn}`;
+
         disableButtons();
         enableClicks();
       }
