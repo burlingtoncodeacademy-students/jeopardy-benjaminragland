@@ -44,10 +44,11 @@ let roundOneCategoryOne = [
       "Salmon is often grilled on this type of wood plank to add flavor. ",
     answer: "What is cedar?",
   },
-];
-// round one category two question/answers/amounts
-let roundOneCategoryTwo = [
+
+  // round one category two question/answers/amounts
+
   {
+    id: (id = "Cat2Quest1"),
     category: "Familial Ties",
     amount: 200,
     question:

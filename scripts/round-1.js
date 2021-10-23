@@ -1,5 +1,9 @@
 let timerCount = 300;
 let speed = 1000;
+let countDiv = document.getElementById("timer");
+let minutes = timerCount / 60;
+let seconds = (timerCount % 60) + "0";
+
 playerOneScore = 0;
 playerTwoScore = 0;
 let questionCount = 0;
@@ -71,8 +75,15 @@ function Jeopardy() {
     interval = setInterval(fiveMinCount, speed);
 
     function fiveMinCount() {
+      countDiv.textContent = `${minutes.toString()}: ${seconds.toString()}`;
       count--;
-      if (count === 0) {
+      minutes = Math.floor(count / 60);
+      seconds = count % 60;
+
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
+      if (count < 0) {
         clearInterval(interval);
         alert("Time is up for round 1");
       }
