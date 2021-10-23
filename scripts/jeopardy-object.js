@@ -48,7 +48,7 @@ let roundOneCategories = [
   // round one category two question/answers/amounts
 
   {
-    id: (id = "Cat2Quest1"),
+    id: "Cat2Quest1",
     category: "Familial Ties",
     amount: 200,
     question:
@@ -57,6 +57,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat2Quest2",
     category: "Familial Ties",
     amount: 400,
     question:
@@ -65,6 +66,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat2Quest3",
     category: "Familial Ties",
     amount: 600,
     question: "Another term for people who share at least one parent.",
@@ -72,6 +74,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat2Quest4",
     category: "Familial Ties",
     amount: 800,
     question:
@@ -80,6 +83,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat2Quest5",
     category: "Familial Ties",
     amount: 1000,
     question: "This term applies to cousins of different generations.",
@@ -89,6 +93,7 @@ let roundOneCategories = [
   // round one category Three question/answers/amounts
 
   {
+    id: "Cat3Quest1",
     category: "Ologies",
     amount: 200,
     question: "This is the study of animals.",
@@ -96,6 +101,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat3Quest2",
     category: "Ologies",
     amount: 400,
     question: "This “ology” is studied in divinity schools.",
@@ -103,6 +109,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat3Quest3",
     category: "Ologies",
     amount: 600,
     question:
@@ -111,6 +118,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat3Quest4",
     category: "Ologies",
     amount: 800,
     question:
@@ -119,6 +127,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat3Quest5",
     category: "Ologies",
     amount: 1000,
     question:
@@ -129,6 +138,7 @@ let roundOneCategories = [
   // round one category four question/answers/amounts
 
   {
+    id: "Cat4Quest1",
     category: "Where’s the School?",
     amount: 200,
     question:
@@ -137,6 +147,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat4Quest2",
     category: "Where’s the School?",
     amount: 400,
     question:
@@ -145,6 +156,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat4Quest3",
     category: "Where’s the School?",
     amount: 600,
     question:
@@ -153,6 +165,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat4Quest4",
     category: "Where’s the School?",
     amount: 800,
     question: "It is home to the Volunteers of the University of Tennessee.",
@@ -160,6 +173,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat4Quest5",
     category: "Where’s the School?",
     amount: 1000,
     question:
@@ -170,6 +184,7 @@ let roundOneCategories = [
   // round one category five question/answers/amounts
 
   {
+    id: "Cat5Quest1",
     category: "Happy Birthday, August Baby",
     amount: 200,
     question:
@@ -178,6 +193,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat5Quest2",
     category: "Happy Birthday, August Baby",
     amount: 400,
     question:
@@ -186,6 +202,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat5Quest3",
     category: "Happy Birthday, August Baby",
     amount: 600,
     question:
@@ -194,6 +211,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat5Quest4",
     category: "Happy Birthday, August Baby",
     amount: 800,
     question:
@@ -202,6 +220,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat5Quest5",
     category: "Happy Birthday, August Baby",
     amount: 1000,
     question:
@@ -212,6 +231,7 @@ let roundOneCategories = [
   // round one category six question/answers/amounts
 
   {
+    id: "Cat6Quest1",
     category: "It Happened One August",
     amount: 200,
     question:
@@ -220,6 +240,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat6Quest2",
     category: "It Happened One August",
     amount: 400,
     question:
@@ -228,6 +249,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat6Quest3",
     category: "It Happened One August",
     amount: 600,
     question:
@@ -236,6 +258,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat6Quest4",
     category: "It Happened One August",
     amount: 800,
     question:
@@ -244,6 +267,7 @@ let roundOneCategories = [
   },
 
   {
+    id: "Cat6Quest5",
     category: "It Happened One August",
     amount: 1000,
     question: "On August 27, 1979, the IRA assassinated this British royal.",
