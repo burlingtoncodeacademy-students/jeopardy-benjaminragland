@@ -100,7 +100,10 @@ function Jeopardy() {
     currentAnswer = thisItem.answer.toLowerCase();
     if (currentAnswer.includes(playerAnswer)) {
       console.log(thisItem.amount);
+
+      //clears question and answer and enables clicks for next turn
       answerInput.value = "";
+      questionFill.textContent = "";
       enableClicks();
     }
   });
