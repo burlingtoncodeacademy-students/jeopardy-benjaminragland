@@ -1,5 +1,5 @@
 // round one category one question/answers/amounts
-let roundOneCategoryOne = [
+let roundOneCategories = [
   {
     id: "Cat1Quest1",
     category: "Chillin’ & Grillin’",
@@ -85,10 +85,9 @@ let roundOneCategoryOne = [
     question: "This term applies to cousins of different generations.",
     answer: "What is once removed?",
   },
-];
 
-// round one category Three question/answers/amounts
-let roundOneCategoryThree = [
+  // round one category Three question/answers/amounts
+
   {
     category: "Ologies",
     amount: 200,
@@ -126,10 +125,9 @@ let roundOneCategoryThree = [
       "This is the study of the causes and spread of diseases in a population.",
     answer: "What is epidemiology?",
   },
-];
 
-// round one category four question/answers/amounts
-let roundOneCategoryFour = [
+  // round one category four question/answers/amounts
+
   {
     category: "Where’s the School?",
     amount: 200,
@@ -168,10 +166,9 @@ let roundOneCategoryFour = [
       "This is where a prospective student could find the University of Georgia, home of the Bulldogs.",
     answer: "What is Athens Georgia?",
   },
-];
 
-// round one category six question/answers/amounts
-let roundOneCategorySix = [
+  // round one category five question/answers/amounts
+
   {
     category: "Happy Birthday, August Baby",
     amount: 200,
@@ -211,10 +208,9 @@ let roundOneCategorySix = [
       "Born August 25, 1968, this celebrity on Food Network’s 30-Minute Meals introduced us to the term EVOO, which stands for extra-virgin olive oil.",
     answer: "Who is Rachael Ray?",
   },
-];
 
-// round one category six question/answers/amounts
-let roundOneCategoryFive = [
+  // round one category six question/answers/amounts
+
   {
     category: "It Happened One August",
     amount: 200,

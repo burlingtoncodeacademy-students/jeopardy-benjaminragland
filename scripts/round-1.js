@@ -98,7 +98,7 @@ function Jeopardy() {
         clickedItem = this.id;
         questionFill = document.getElementById(clickedItem);
 
-        thisItem = findItem(roundOneCategoryOne);
+        thisItem = findItem(roundOneCategories);
         styler(questionFill);
         questionFill.textContent = thisItem.question;
         enableButtons();

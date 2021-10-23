@@ -76,7 +76,7 @@ h1 {
   display: grid;
   background-color: blue;
   width: 80vw;
-  height: 67vh;
+  min-height: 62vh;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1em;
