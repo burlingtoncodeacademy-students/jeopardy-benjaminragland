@@ -1,20 +1,26 @@
+//timer variable declarations
 let timerCount = 300;
-let secondCount = 5;
+let secondCount = 15;
 let speed = 1000;
 let countDiv = document.getElementById("timer");
 let minutes = timerCount / 60;
 let seconds = (timerCount % 60) + "0";
+let timerExpired;
 
+//gameplay variable declarations
 playerOneScore = 0;
 playerTwoScore = 0;
 let questionCount = 0;
 let playerTurn = "Player One";
+let guessPassed;
+let passCount = 0;
 let clickedItem;
 let questionFill;
 let thisItem;
 let playerAnswer;
 let currentAnswer;
 
+//document method declarations
 let gridContainer = document.getElementById("grid-container");
 let clicked = Array.from(document.getElementsByClassName("dollarValue"));
 let disabledGuess = document.getElementById("roundOneGuess");
@@ -106,8 +112,13 @@ function Jeopardy() {
 
     function fiveSecondCount() {
       count--;
+
+      //logic for determining whether to pass turn if guessTimer runs out
       if (count === 0) {
-        alert("timer up!");
+        if (playerTurn === "Player One" && guessPassed === true) {
+          playerOneScore -= thisItem.amount;
+          playerOne.textContent = `Player One Score: ${playerOneScore}`;
+        }
       }
     }
   }
@@ -126,7 +137,7 @@ function Jeopardy() {
         enableButtons();
         disableClicks();
         guessTimer(secondCount);
-
+        timerExpired = false;
         console.log(thisItem);
       });
     });
@@ -135,15 +146,23 @@ function Jeopardy() {
   //switch players if current player pushes pass button
   playerPass.addEventListener("click", () => {
     if (playerTurn === "Player One") {
+      passCount++;
       playerTurn = "Player Two";
       turn.textContent = `Turn: ${playerTurn}`;
-      disablePassBtn();
+      // guessPassed = true;
       guessTimer(secondCount);
     } else if (playerTurn === "Player Two") {
+      passCount++;
       playerTurn = "Player One";
       turn.textContent = `Turn: ${playerTurn}`;
-      disablePassBtn();
+      // guessPassed = true;
       guessTimer(secondCount);
+    }
+    if (passCount === 2) {
+      clearInterval(tick);
+      questionFill.textContent = "";
+      enableClicks();
+      passCount = 0;
     }
   });
 
