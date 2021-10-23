@@ -1,4 +1,5 @@
 let timerCount = 300;
+let secondCount = 5;
 let speed = 1000;
 let countDiv = document.getElementById("timer");
 let minutes = timerCount / 60;
@@ -25,7 +26,7 @@ let answerInput = document.getElementById("answerInput");
 let playerGuess = document.getElementById("roundOneGuess");
 let playerPass = document.getElementById("roundOnePass");
 
-//functions to disable and enable buttons
+//functions to disable and enable pass and guess buttons
 function disableButtons() {
   disabledGuess.disabled = true;
   disabledPass.disabled = true;
@@ -33,6 +34,15 @@ function disableButtons() {
 
 function enableButtons() {
   disabledGuess.disabled = false;
+  disabledPass.disabled = false;
+}
+
+//functions for disabling and enabling pass button only
+function disablePassBtn() {
+  disabledPass.disabled = true;
+}
+
+function enablePassBtn() {
   disabledPass.disabled = false;
 }
 
@@ -90,6 +100,18 @@ function Jeopardy() {
     }
   }
 
+  //function for 5 second guess timer
+  function guessTimer(count) {
+    tick = setInterval(fiveSecondCount, speed);
+
+    function fiveSecondCount() {
+      count--;
+      if (count === 0) {
+        alert("timer up!");
+      }
+    }
+  }
+
   //loops through array for matching id of tile clicked / assigns to variable
   getObj();
   function getObj() {
@@ -103,6 +125,7 @@ function Jeopardy() {
         questionFill.textContent = thisItem.question;
         enableButtons();
         disableClicks();
+        guessTimer(secondCount);
 
         console.log(thisItem);
       });
@@ -114,18 +137,24 @@ function Jeopardy() {
     if (playerTurn === "Player One") {
       playerTurn = "Player Two";
       turn.textContent = `Turn: ${playerTurn}`;
+      disablePassBtn();
+      guessTimer(secondCount);
     } else if (playerTurn === "Player Two") {
       playerTurn = "Player One";
       turn.textContent = `Turn: ${playerTurn}`;
+      disablePassBtn();
+      guessTimer(secondCount);
     }
   });
 
   //assigns player's answer to variable. checks that against correct answer.
   playerGuess.addEventListener("click", () => {
-    questionCount++;
+    enableButtons();
+
     playerAnswer = answerInput.value.toLowerCase();
     currentAnswer = thisItem.answer.toLowerCase();
     if (currentAnswer === playerAnswer) {
+      clearInterval(tick);
       //clears question and answer and enables clicks for next turn
       answerInput.value = "";
       questionFill.textContent = "";
@@ -148,6 +177,7 @@ function Jeopardy() {
 
     //updates score for current player if answer is incorrect
     if (currentAnswer !== playerAnswer) {
+      clearInterval(tick);
       //clears question and answer and enables clicks for next turn
       answerInput.value = "";
       questionFill.textContent = "";
@@ -168,6 +198,12 @@ function Jeopardy() {
         disableButtons();
         enableClicks();
       }
+    }
+    questionCount++;
+
+    //ends round if all tiles have been selected *** need to add functionality to go to round 2 ***
+    if (questionCount === 3) {
+      alert("round over!");
     }
   });
 }
