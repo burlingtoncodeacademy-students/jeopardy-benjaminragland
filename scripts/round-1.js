@@ -9,10 +9,12 @@ let questionFill;
 let thisItem;
 let playerAnswer;
 let currentAnswer;
+
 let gridContainer = document.getElementById("grid-container");
 let clicked = Array.from(document.getElementsByClassName("dollarValue"));
 let disabledGuess = document.getElementById("roundOneGuess");
 let disabledPass = document.getElementById("roundOnePass");
+let turn = document.getElementById("player-turn");
 let playerOne = document.getElementById("playerOne");
 let playerTwo = document.getElementById("playerTwo");
 let answerInput = document.getElementById("answerInput");
@@ -58,6 +60,7 @@ function Jeopardy() {
   //buttons are disabled until player chooses a tile
   disableButtons();
 
+  turn.textContent = `Turn: ${playerTurn}`;
   playerOne.textContent = `Player One Score: ${playerOneScore}`;
   playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
 
@@ -99,12 +102,25 @@ function Jeopardy() {
     playerAnswer = answerInput.value.toLowerCase();
     currentAnswer = thisItem.answer.toLowerCase();
     if (currentAnswer.includes(playerAnswer)) {
-      console.log(thisItem.amount);
-
       //clears question and answer and enables clicks for next turn
       answerInput.value = "";
       questionFill.textContent = "";
-      enableClicks();
+
+      if (playerTurn === "Player One") {
+        playerOneScore += thisItem.amount;
+        playerOne.textContent = `Player One Score: ${playerOneScore}`;
+        playerTurn = "Player Two";
+        turn.textContent = `Turn: ${playerTurn}`;
+        disableButtons();
+        enableClicks();
+      } else if ((playerTurn = "Player Two")) {
+        playerTwoScore += thisItem.amount;
+        playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
+        playerTurn = "Player One";
+        turn.textContent = `Turn: ${playerTurn}`;
+        disableButtons();
+        enableClicks();
+      }
     }
   });
 }
