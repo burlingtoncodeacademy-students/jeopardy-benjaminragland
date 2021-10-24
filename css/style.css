@@ -175,6 +175,12 @@ input {
   margin-top: 0.25em;
 }
 
+#guess-timer {
+  font-size: 3em;
+  color: red;
+  margin-top: 0.25em;
+}
+
 .nextRound {
   background-color: rgb(152, 15, 170);
   color: ghostwhite;

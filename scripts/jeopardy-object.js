@@ -15,7 +15,7 @@ let roundOneCategories = [
     amount: 400,
     question:
       "The name of this flying creature describes slicing a slab of meat nearly in half and unfolding it flat.",
-    answer: "What is butterfly?",
+    answer: "What is butterfly",
   },
 
   {
@@ -24,7 +24,7 @@ let roundOneCategories = [
     amount: 600,
     question:
       "Manual ice cream machines require adding this condiment to the ice before churning the ingredients.",
-    answer: "What is salt?",
+    answer: "What is salt",
   },
 
   {
@@ -33,7 +33,7 @@ let roundOneCategories = [
     amount: 800,
     question:
       "This is the term for applying a seasoned liquid while grilling to keep the food soft and moist. ",
-    answer: "What is basting (or mopping)?",
+    answer: "What is basting (or mopping)",
   },
 
   {
@@ -42,7 +42,7 @@ let roundOneCategories = [
     amount: 1000,
     question:
       "Salmon is often grilled on this type of wood plank to add flavor. ",
-    answer: "What is cedar?",
+    answer: "What is cedar",
   },
 
   // round one category two question/answers/amounts
@@ -53,7 +53,7 @@ let roundOneCategories = [
     amount: 200,
     question:
       "Another word for ancestry or pedigree, often applied to royalty.",
-    answer: "What is bloodline?",
+    answer: "What is bloodline",
   },
 
   {
@@ -62,7 +62,7 @@ let roundOneCategories = [
     amount: 400,
     question:
       "Your spouse’s mother, father, sibling, or other relative by marriage.",
-    answer: "What is in-law?",
+    answer: "What is in-law",
   },
 
   {
@@ -70,7 +70,7 @@ let roundOneCategories = [
     category: "Familial Ties",
     amount: 600,
     question: "Another term for people who share at least one parent.",
-    answer: "What is siblings?",
+    answer: "What is siblings",
   },
 
   {
@@ -79,7 +79,7 @@ let roundOneCategories = [
     amount: 800,
     question:
       "This church maintains the largest free genealogy resource in the world.",
-    answer: "What is Church of Jesus Christ of Latter-Day Saints (or Mormon)?",
+    answer: "What is Church of Jesus Christ of Latter-Day Saints (or Mormon)",
   },
 
   {
@@ -87,7 +87,7 @@ let roundOneCategories = [
     category: "Familial Ties",
     amount: 1000,
     question: "This term applies to cousins of different generations.",
-    answer: "What is once removed?",
+    answer: "What is once removed",
   },
 
   // round one category Three question/answers/amounts
@@ -97,7 +97,7 @@ let roundOneCategories = [
     category: "Ologies",
     amount: 200,
     question: "This is the study of animals.",
-    answer: "What is zoology?",
+    answer: "What is zoology",
   },
 
   {
@@ -105,7 +105,7 @@ let roundOneCategories = [
     category: "Ologies",
     amount: 400,
     question: "This “ology” is studied in divinity schools.",
-    answer: "What is theology?",
+    answer: "What is theology",
   },
 
   {
@@ -114,7 +114,7 @@ let roundOneCategories = [
     amount: 600,
     question:
       "This science focuses on the relationship between living organisms and the environment.",
-    answer: "What is ecology?",
+    answer: "What is ecology",
   },
 
   {
@@ -132,53 +132,53 @@ let roundOneCategories = [
     amount: 1000,
     question:
       "This is the study of the causes and spread of diseases in a population.",
-    answer: "What is epidemiology?",
+    answer: "What is epidemiology",
   },
 
   // round one category four question/answers/amounts
 
   {
     id: "Cat4Quest1",
-    category: "Where’s the School?",
+    category: "Where’s the School",
     amount: 200,
     question:
       "Notre Dame, home of the Fighting Irish athletics, is located here.",
-    answer: "What is South Bend Indiana?",
+    answer: "What is South Bend Indiana",
   },
 
   {
     id: "Cat4Quest2",
-    category: "Where’s the School?",
+    category: "Where’s the School",
     amount: 400,
     question:
       "It is where you can find the University of Alabama’s main campus, home of the Crimson Tide.",
-    answer: "What is Tuscaloosa Alabama?",
+    answer: "What is Tuscaloosa Alabama",
   },
 
   {
     id: "Cat4Quest3",
-    category: "Where’s the School?",
+    category: "Where’s the School",
     amount: 600,
     question:
       "University of Nebraska, home of the Cornhuskers, is in this capital city",
-    answer: "What is Lincoln Nebraska?",
+    answer: "What is Lincoln Nebraska",
   },
 
   {
     id: "Cat4Quest4",
-    category: "Where’s the School?",
+    category: "Where’s the School",
     amount: 800,
     question: "It is home to the Volunteers of the University of Tennessee.",
-    answer: "What is Knoxville Tennessee?",
+    answer: "What is Knoxville Tennessee",
   },
 
   {
     id: "Cat4Quest5",
-    category: "Where’s the School?",
+    category: "Where’s the School",
     amount: 1000,
     question:
       "This is where a prospective student could find the University of Georgia, home of the Bulldogs.",
-    answer: "What is Athens Georgia?",
+    answer: "What is Athens Georgia",
   },
 
   // round one category five question/answers/amounts
@@ -189,7 +189,7 @@ let roundOneCategories = [
     amount: 200,
     question:
       "Born August 13, 1982, she serves as the White House press secretary.",
-    answer: "Who is Sarah Huckabee Sanders?",
+    answer: "Who is Sarah Huckabee Sanders",
   },
 
   {
@@ -198,7 +198,7 @@ let roundOneCategories = [
     amount: 400,
     question:
       "Born August 29, 1915, this Swedish-born actress starred in the 1942 film Casablancaas a woman with two love interests.",
-    answer: "Who is Ingrid Bergman?",
+    answer: "Who is Ingrid Bergman",
   },
 
   {
@@ -207,7 +207,7 @@ let roundOneCategories = [
     amount: 600,
     question:
       "Born August 14, 1945, this comedian is best known for his roles in the 1978 film A Wild and Crazy Guy and the 1979 film The Jerk.",
-    answer: "Who is Steve Martin?",
+    answer: "Who is Steve Martin",
   },
 
   {
@@ -216,7 +216,7 @@ let roundOneCategories = [
     amount: 800,
     question:
       "Born August 6, 1911, this American actress is best known for her role as Ricky’s wife and Ethyl’s best friend.",
-    answer: "Who is Lucille Ball?",
+    answer: "Who is Lucille Ball",
   },
 
   {
@@ -225,7 +225,7 @@ let roundOneCategories = [
     amount: 1000,
     question:
       "Born August 25, 1968, this celebrity on Food Network’s 30-Minute Meals introduced us to the term EVOO, which stands for extra-virgin olive oil.",
-    answer: "Who is Rachael Ray?",
+    answer: "Who is Rachael Ray",
   },
 
   // round one category six question/answers/amounts
@@ -236,7 +236,7 @@ let roundOneCategories = [
     amount: 200,
     question:
       "On August 2, 1776, fifty-six members of Congress signed this founding document, which is celebrated every Fourth of July.",
-    answer: "What is the Declaration of Independence?",
+    answer: "What is the Declaration of Independence",
   },
 
   {
@@ -245,7 +245,7 @@ let roundOneCategories = [
     amount: 400,
     question:
       "On August 5, 2001, this happened to the U.S. credit rating for the first time in history.",
-    answer: "What is it was downgraded?",
+    answer: "What is it was downgraded",
   },
 
   {
@@ -254,7 +254,7 @@ let roundOneCategories = [
     amount: 600,
     question:
       "On August 23, 1989, this Cincinnati Reds manager was expelled from baseball for gambling on the game.",
-    answer: "Who is Pete Rose?",
+    answer: "Who is Pete Rose",
   },
 
   {
@@ -271,6 +271,281 @@ let roundOneCategories = [
     category: "It Happened One August",
     amount: 1000,
     question: "On August 27, 1979, the IRA assassinated this British royal.",
-    answer: "Who is Lord Mountbatten?",
+    answer: "Who is Lord Mountbatten",
+  },
+];
+
+// round two category seven question/answers/amounts
+let roundTwoCategories = [
+  {
+    id: "Cat7Quest1",
+    category: "Comfort Foods from North of the Mason-Dixon Line",
+    amount: 200,
+    question: "New England clam chowder is this color.",
+    answer: "What is white",
+  },
+
+  {
+    id: "Cat7Quest2",
+    category: "Comfort Foods from North of the Mason-Dixon Line",
+    amount: 400,
+    question:
+      "This city, nicknamed Bean Town, is named for baked beans made with molasses and salt pork.",
+    answer: "What is Boston",
+  },
+
+  {
+    id: "Cat7Quest3",
+    category: "Comfort Foods from North of the Mason-Dixon Line",
+    amount: 600,
+    question:
+      "Traditional Canadian tart made with pastry shells and a filling of butter, sugar, and egg.",
+    answer: "What is butter tart",
+  },
+
+  {
+    id: "Cat7Quest4",
+    category: "Comfort Foods from North of the Mason-Dixon Line",
+    amount: 800,
+    question:
+      "This type of seafood roll is a favorite in Maine and Nova Scotia.",
+    answer: "What is lobster",
+  },
+
+  {
+    id: "Cat7Quest5",
+    category: "Comfort Foods from North of the Mason-Dixon Line",
+    amount: 1000,
+    question: "The Canadian answer to America’s berry pies.",
+    answer: "What is Saskatoon berry pie",
+  },
+
+  // round two category eight question/answers/amounts
+
+  {
+    id: "Cat8Quest1",
+    category: "Simply Red",
+    amount: 200,
+    question:
+      "This is rolled out to the airplane stairs when visiting foreign dignitaries arrive.",
+    answer: "What is red carpet",
+  },
+
+  {
+    id: "Cat8Quest2",
+    category: "Simply Red",
+    amount: 400,
+    question: "These red berries are a Thanksgiving favorite.",
+    answer: "What are cranberries",
+  },
+
+  {
+    id: "Cat8Quest3",
+    category: "Simply Red",
+    amount: 600,
+    question: "This adorable bug is red with black dots.",
+    answer: "What is ladybug",
+  },
+
+  {
+    id: "Cat8Quest4",
+    category: "Simply Red",
+    amount: 800,
+    question: "He plays the father and junk dealer in Sanford and Son.",
+    answer: "Who is Redd Foxx",
+  },
+
+  {
+    id: "Cat8Quest5",
+    category: "Simply Red",
+    amount: 1000,
+    question:
+      "British soldiers were called this during the American Revolution.",
+    answer: "What are Redcoats",
+  },
+
+  // round two category nine question/answers/amounts
+
+  {
+    id: "Cat9Quest1",
+    category: "Male Order",
+    amount: 200,
+    question:
+      "Some men who may have never turned on an oven in the kitchen routinely perform this outdoor cooking activity.",
+    answer: "What is grilling",
+  },
+
+  {
+    id: "Cat9Quest2",
+    category: "Male Order",
+    amount: 400,
+    question:
+      "Men in beer commercials never seem to have this condition, also known as a “spare tire.”",
+    answer: "What is beer belly?",
+  },
+
+  {
+    id: "Cat9Quest3",
+    category: "Male Order",
+    amount: 600,
+    question:
+      "This compartment in a commercial or military aircraft was once the exclusive domain of men.",
+    answer: "What is cockpit",
+  },
+
+  {
+    id: "Cat9Quest4",
+    category: "Male Order",
+    amount: 800,
+    question: "Women are from Venus, and men are from this planet.",
+    answer: "What is Mars",
+  },
+
+  {
+    id: "Cat9Quest5",
+    category: "Male Order",
+    amount: 1000,
+    question:
+      "This hair-loss problem, common in men,starts at the top of the head with a receding hairline and moves back to the crown.",
+    answer: "What is pattern baldness",
+  },
+
+  // round two category ten question/answers/amounts
+
+  {
+    id: "Cat10Quest1",
+    category: "Fall in Line with Fall",
+    amount: 200,
+    question:
+      "Notre Dame, home of the Fighting Irish athletics, is located here.",
+    answer: "What is South Bend Indiana",
+  },
+
+  {
+    id: "Cat10Quest2",
+    category: "Fall in Line with Fall",
+    amount: 400,
+    question:
+      "It is where you can find the University of Alabama’s main campus, home of the Crimson Tide.",
+    answer: "What is Tuscaloosa Alabama",
+  },
+
+  {
+    id: "Cat10Quest3",
+    category: "Fall in Line with Fall",
+    amount: 600,
+    question:
+      "University of Nebraska, home of the Cornhuskers, is in this capital city",
+    answer: "What is Lincoln Nebraska",
+  },
+
+  {
+    id: "Cat10Quest4",
+    category: "Fall in Line with Fall",
+    amount: 800,
+    question: "It is home to the Volunteers of the University of Tennessee.",
+    answer: "What is Knoxville Tennessee",
+  },
+
+  {
+    id: "Cat10Quest5",
+    category: "Fall in Line with Fall",
+    amount: 1000,
+    question:
+      "This is where a prospective student could find the University of Georgia, home of the Bulldogs.",
+    answer: "What is Athens Georgia",
+  },
+
+  // round two category eleven question/answers/amounts
+
+  {
+    id: "Cat11Quest1",
+    category: "Happy Birthday, October Baby",
+    amount: 200,
+    question:
+      "Born August 13, 1982, she serves as the White House press secretary.",
+    answer: "Who is Sarah Huckabee Sanders",
+  },
+
+  {
+    id: "Cat11Quest2",
+    category: "Happy Birthday, October Baby",
+    amount: 400,
+    question:
+      "Born August 29, 1915, this Swedish-born actress starred in the 1942 film Casablancaas a woman with two love interests.",
+    answer: "Who is Ingrid Bergman",
+  },
+
+  {
+    id: "Cat11Quest3",
+    category: "Happy Birthday, October Baby",
+    amount: 600,
+    question:
+      "Born August 14, 1945, this comedian is best known for his roles in the 1978 film A Wild and Crazy Guy and the 1979 film The Jerk.",
+    answer: "Who is Steve Martin",
+  },
+
+  {
+    id: "Cat11Quest4",
+    category: "Happy Birthday, October Baby",
+    amount: 800,
+    question:
+      "Born August 6, 1911, this American actress is best known for her role as Ricky’s wife and Ethyl’s best friend.",
+    answer: "Who is Lucille Ball",
+  },
+
+  {
+    id: "Cat11Quest5",
+    category: "Happy Birthday, October Baby",
+    amount: 1000,
+    question:
+      "Born August 25, 1968, this celebrity on Food Network’s 30-Minute Meals introduced us to the term EVOO, which stands for extra-virgin olive oil.",
+    answer: "Who is Rachael Ray",
+  },
+
+  // round two category twelve question/answers/amounts
+
+  {
+    id: "Cat12Quest1",
+    category: "It Happened One October",
+    amount: 200,
+    question:
+      "On August 2, 1776, fifty-six members of Congress signed this founding document, which is celebrated every Fourth of July.",
+    answer: "What is the Declaration of Independence",
+  },
+
+  {
+    id: "Cat12Quest2",
+    category: "It Happened One October",
+    amount: 400,
+    question:
+      "On August 5, 2001, this happened to the U.S. credit rating for the first time in history.",
+    answer: "What is it was downgraded",
+  },
+
+  {
+    id: "Cat12Quest3",
+    category: "It Happened One October",
+    amount: 600,
+    question:
+      "On August 23, 1989, this Cincinnati Reds manager was expelled from baseball for gambling on the game.",
+    answer: "Who is Pete Rose",
+  },
+
+  {
+    id: "Cat12Quest4",
+    category: "It Happened One October",
+    amount: 800,
+    question:
+      "On August 12, 1990, Susan Hendrickson discovered the skeleton of this huge animal.",
+    answer: "What is a dinosaur (or Tyrannosaurus rex)",
+  },
+
+  {
+    id: "Cat12Quest5",
+    category: "It Happened One October",
+    amount: 1000,
+    question: "On August 27, 1979, the IRA assassinated this British royal.",
+    answer: "Who is Lord Mountbatten",
   },
 ];
