@@ -193,7 +193,6 @@ function Jeopardy() {
         timerExpired = false;
         incorrectAnswers = 0;
         console.log(thisItem);
-        console.log(guessPassed);
       });
     });
   }
@@ -215,14 +214,14 @@ function Jeopardy() {
       guessPassed = true;
       guessTimer(secondCount);
     }
-    // if (passCount === 2) {
-    //   clearInterval(tick);
-    //   guessTimerDiv.textContent = "";
-    //   questionFill.textContent = "";
-    //   enableClicks();
-    //   disableButtons();
-    //   passCount = 0;
-    // }
+    if (passCount === 2) {
+      clearInterval(tick);
+      guessTimerDiv.textContent = "";
+      questionFill.textContent = "";
+      enableClicks();
+      disableButtons();
+      passCount = 0;
+    }
   });
 
   //assigns player's answer to variable. checks that against correct answer.
@@ -261,20 +260,20 @@ function Jeopardy() {
       guessTimerDiv.textContent = "";
       //clears question and answer and enables clicks for next turn
       answerInput.value = "";
-      console.log(passCount);
+
       //updates score for current player if answer is incorrect
       if (playerTurn === "Player One" && passCount === 1) {
         playerOneScore -= thisItem.amount;
         playerOne.textContent = `Player One Score: ${playerOneScore}`;
         playerTurn = "Player Two";
         turn.textContent = `Turn: ${playerTurn}`;
-        questionFill.textContent = 0;
+        questionFill.textContent = "";
         disableButtons();
         enableClicks();
       } else if (playerTurn === "Player Two" && passCount === 1) {
         playerTwoScore -= thisItem.amount;
         playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
-        playerTurn = "Player Two";
+        playerTurn = "Player One";
         turn.textContent = `Turn: ${playerTurn}`;
         questionFill.textContent = "";
         disableButtons();
@@ -285,7 +284,7 @@ function Jeopardy() {
         playerOne.textContent = `Player One Score: ${playerOneScore}`;
         playerTurn = "Player Two";
         turn.textContent = `Turn: ${playerTurn}`;
-        // disableButtons();
+        disablePassBtn();
         // enableClicks();
       } else if (playerTurn === "Player Two") {
         incorrectAnswers++;
@@ -293,7 +292,7 @@ function Jeopardy() {
         playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
         playerTurn = "Player One";
         turn.textContent = `Turn: ${playerTurn}`;
-        // disableButtons();
+        disablePassBtn();
         // enableClicks();
       }
 
@@ -311,5 +310,4 @@ function Jeopardy() {
       alert("round over!");
     }
   });
-  console.log(guessPassed);
 }
