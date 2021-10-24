@@ -9,8 +9,8 @@ let seconds = (timerCount % 60) + "0";
 let timerExpired;
 
 //gameplay variable declarations
-playerOneScore = 0;
-playerTwoScore = 0;
+let playerOneScore = +sessionStorage.getItem("playerOneScore");
+let playerTwoScore = +sessionStorage.getItem("playerTwoScore");
 let questionCount = 0;
 let playerTurn = "Player One";
 let guessPassed;
@@ -82,6 +82,7 @@ Jeopardy();
 
 function Jeopardy() {
   //buttons are disabled until player chooses a tile
+  console.log(typeof playerOneScore);
   disableButtons();
 
   turn.textContent = `Turn: ${playerTurn}`;

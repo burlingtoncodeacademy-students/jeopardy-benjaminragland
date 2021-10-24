@@ -9,8 +9,8 @@ let seconds = (timerCount % 60) + "0";
 let timerExpired;
 
 //gameplay variable declarations
-playerOneScore = 0;
-playerTwoScore = 0;
+let playerOneScore = 0;
+let playerTwoScore = 0;
 let questionCount = 0;
 let playerTurn = "Player One";
 let guessPassed;
@@ -81,6 +81,7 @@ function styler(fill) {
 Jeopardy();
 
 function Jeopardy() {
+  // alert("Player one starts the game! Have fun!");
   //buttons are disabled until player chooses a tile
   disableButtons();
 
@@ -183,8 +184,9 @@ function Jeopardy() {
   //loops through array for matching id of tile clicked / assigns to variable
   getObj();
   function getObj() {
+    //
     clicked.forEach((element) => {
-      element.addEventListener("click", function (evt) {
+      element.addEventListener("click", function () {
         clickedItem = this.id;
         questionFill = document.getElementById(clickedItem);
 
@@ -328,7 +330,8 @@ function Jeopardy() {
   });
 
   roundTwoStart.addEventListener("click", (evt) => {
-    document.location = "round-2.html?" + playerOneScore;
-    evt.preventDefault();
+    sessionStorage.setItem("playerOneScore", playerOneScore);
+    sessionStorage.setItem("playerTwoScore", playerTwoScore);
+    document.location = "round-2.html";
   });
 }

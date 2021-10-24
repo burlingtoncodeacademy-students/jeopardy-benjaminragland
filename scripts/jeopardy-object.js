@@ -6,7 +6,7 @@ let roundOneCategories = [
     amount: 200,
     question:
       "Weber is a well-known maker of this essential feature of a backyard barbecue.",
-    answer: "What is a grill",
+    answer: "What is grill",
   },
 
   {
@@ -33,7 +33,7 @@ let roundOneCategories = [
     amount: 800,
     question:
       "This is the term for applying a seasoned liquid while grilling to keep the food soft and moist. ",
-    answer: "What is basting (or mopping)",
+    answer: "What is basting",
   },
 
   {
@@ -79,7 +79,7 @@ let roundOneCategories = [
     amount: 800,
     question:
       "This church maintains the largest free genealogy resource in the world.",
-    answer: "What is Church of Jesus Christ of Latter-Day Saints (or Mormon)",
+    answer: "What is Church of Jesus Christ of Latter-Day Saints",
   },
 
   {
