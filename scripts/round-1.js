@@ -1,6 +1,6 @@
 //timer variable declarations
 let timerCount = 300;
-let secondCount = 30;
+let secondCount = 10;
 let speed = 1000;
 let countDiv = document.getElementById("timer");
 let guessTimerDiv = document.getElementById("guess-timer");
@@ -119,6 +119,7 @@ function Jeopardy() {
 
       //logic for determining whether to pass turn if guessTimer runs out
       if (count < 0) {
+        timedOut++;
         clearInterval(tick);
         guessTimerDiv.textContent = "";
 
@@ -145,19 +146,21 @@ function Jeopardy() {
 
         //gives other player a chance to answer if timer runs out and nobody has passed
         if (playerTurn === "Player One" && guessPassed === false) {
+          disablePassBtn();
           playerOneScore -= thisItem.amount;
           playerOne.textContent = `Player One Score: ${playerOneScore}`;
           playerTurn = "Player Two";
           turn.textContent = `Turn: ${playerTurn}`;
-          timedOut++;
+          answerInput.value = "";
           clearInterval(tick);
           guessTimer(secondCount);
         } else if (playerTurn === "Player Two" && guessPassed === false) {
+          disablePassBtn();
           playerTwoScore -= thisItem.amount;
           playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
           playerTurn = "Player One";
           turn.textContent = `Turn: ${playerTurn}`;
-          timedOut++;
+          answerInput.value = "";
           clearInterval(tick);
           guessTimer(secondCount);
         }
@@ -167,6 +170,7 @@ function Jeopardy() {
           clearInterval(tick);
           guessTimerDiv.textContent = "";
           questionFill.textContent = "";
+          answerInput.value = "";
           enableClicks();
           disableButtons();
           timedOut = 0;
@@ -192,6 +196,7 @@ function Jeopardy() {
         guessPassed = false;
         timerExpired = false;
         incorrectAnswers = 0;
+        timedOut = 0;
         console.log(thisItem);
       });
     });
@@ -230,6 +235,8 @@ function Jeopardy() {
 
     playerAnswer = answerInput.value.toLowerCase();
     currentAnswer = thisItem.answer.toLowerCase();
+
+    //checks to see if player's answer is correct
     if (currentAnswer === playerAnswer) {
       passCount = 0;
       clearInterval(tick);
@@ -238,17 +245,26 @@ function Jeopardy() {
       answerInput.value = "";
       questionFill.textContent = "";
 
+      if (playerTurn === "Player One" && timedOut === 1) {
+        playerOneScore += thisItem.amount;
+        playerOne.textContent = `Player One Score: ${playerOneScore}`;
+        disableButtons();
+        enableClicks();
+      } else if (playerTurn === "Player Two" && timedOut === 1) {
+        playerTwoScore += thisItem.amount;
+        playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
+        disableButtons();
+        enableClicks();
+      }
       //updates score for current player if answer is correct
       if (playerTurn === "Player One") {
         playerOneScore += thisItem.amount;
         playerOne.textContent = `Player One Score: ${playerOneScore}`;
-
         disableButtons();
         enableClicks();
       } else if ((playerTurn = "Player Two")) {
         playerTwoScore += thisItem.amount;
         playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
-
         disableButtons();
         enableClicks();
       }
@@ -285,7 +301,6 @@ function Jeopardy() {
         playerTurn = "Player Two";
         turn.textContent = `Turn: ${playerTurn}`;
         disablePassBtn();
-        // enableClicks();
       } else if (playerTurn === "Player Two") {
         incorrectAnswers++;
         playerTwoScore -= thisItem.amount;
@@ -293,9 +308,9 @@ function Jeopardy() {
         playerTurn = "Player One";
         turn.textContent = `Turn: ${playerTurn}`;
         disablePassBtn();
-        // enableClicks();
       }
 
+      //ends player attempts for current question if both player are incorrect
       if (incorrectAnswers === 2) {
         questionFill.textContent = "";
         answerInput.textContent = "";
@@ -306,7 +321,7 @@ function Jeopardy() {
     questionCount++;
 
     //ends round if all tiles have been selected *** need to add functionality to go to round 2 ***
-    if (questionCount === 30) {
+    if (questionCount === 60) {
       alert("round over!");
     }
   });
