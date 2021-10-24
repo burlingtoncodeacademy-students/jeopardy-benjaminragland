@@ -550,3 +550,12 @@ let roundTwoCategories = [
     answer: "What are draft cards",
   },
 ];
+
+let finalJeopardy = [
+  {
+    id: "finalJeopardy",
+    category: "Medical Technology",
+    question: "EKG stands for this medical procedure.",
+    answer: "What is electrocardiogram",
+  },
+];

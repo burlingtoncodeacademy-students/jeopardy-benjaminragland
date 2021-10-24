@@ -9,6 +9,7 @@ let seconds = (timerCount % 60) + "0";
 let timerExpired;
 
 //gameplay variable declarations
+let roundOne = true;
 let playerOneScore = 0;
 let playerTwoScore = 0;
 let questionCount = 0;
@@ -83,6 +84,7 @@ Jeopardy();
 function Jeopardy() {
   // alert("Player one starts the game! Have fun!");
   //buttons are disabled until player chooses a tile
+
   disableButtons();
 
   turn.textContent = `Turn: ${playerTurn}`;
@@ -104,9 +106,14 @@ function Jeopardy() {
       if (seconds < 10) {
         seconds = "0" + seconds;
       }
+
+      //takes players to round two if timer runs out. transfers scores
       if (count < 0) {
         clearInterval(interval);
         alert("Time is up for round 1");
+        sessionStorage.setItem("playerOneScore", playerOneScore);
+        sessionStorage.setItem("playerTwoScore", playerTwoScore);
+        document.location = "round-2.html";
       }
     }
   }
@@ -132,6 +139,7 @@ function Jeopardy() {
           playerTurn = "Player Two";
           guessTimerDiv.textContent = "";
           questionFill.textContent = "";
+          questionCount++;
           turn.textContent = `Turn: ${playerTurn}`;
           enableClicks();
           disableButtons();
@@ -141,6 +149,7 @@ function Jeopardy() {
           playerTurn = "Player One";
           guessTimerDiv.textContent = "";
           questionFill.textContent = "";
+          questionCount++;
           turn.textContent = `Turn: ${playerTurn}`;
           enableClicks();
           disableButtons();
@@ -172,6 +181,7 @@ function Jeopardy() {
           clearInterval(tick);
           guessTimerDiv.textContent = "";
           questionFill.textContent = "";
+          questionCount++;
           answerInput.value = "";
           enableClicks();
           disableButtons();
@@ -226,7 +236,7 @@ function Jeopardy() {
       clearInterval(tick);
       guessTimerDiv.textContent = "";
       questionFill.textContent = "";
-      enableClicks();
+      questionCount + enableClicks();
       disableButtons();
       passCount = 0;
     }
@@ -247,6 +257,7 @@ function Jeopardy() {
       //clears question and answer and enables clicks for next turn
       answerInput.value = "";
       questionFill.textContent = "";
+      questionCount++;
 
       if (playerTurn === "Player One" && timedOut === 1) {
         playerOneScore += thisItem.amount;
@@ -287,6 +298,7 @@ function Jeopardy() {
         playerTurn = "Player Two";
         turn.textContent = `Turn: ${playerTurn}`;
         questionFill.textContent = "";
+        questionCount++;
         disableButtons();
         enableClicks();
       } else if (playerTurn === "Player Two" && passCount === 1) {
@@ -295,6 +307,7 @@ function Jeopardy() {
         playerTurn = "Player One";
         turn.textContent = `Turn: ${playerTurn}`;
         questionFill.textContent = "";
+        questionCount++;
         disableButtons();
         enableClicks();
       } else if (playerTurn === "Player One") {
@@ -316,18 +329,22 @@ function Jeopardy() {
       //ends player attempts for current question if both player are incorrect
       if (incorrectAnswers === 2) {
         questionFill.textContent = "";
+        questionCount++;
         answerInput.textContent = "";
         disableButtons();
         enableClicks();
       }
     }
-    questionCount++;
-
-    //ends round if all tiles have been selected *** need to add functionality to go to round 2 ***
-    if (questionCount === 60) {
-      alert("round over!");
-    }
   });
+
+  questionCount++;
+  //ends round if all tiles have been selected *** need to add functionality to go to round 2 ***
+  if (questionCount === 4) {
+    alert("Round 1 over!");
+    sessionStorage.setItem("playerOneScore", playerOneScore);
+    sessionStorage.setItem("playerTwoScore", playerTwoScore);
+    document.location = "round-2.html";
+  }
 
   roundTwoStart.addEventListener("click", (evt) => {
     sessionStorage.setItem("playerOneScore", playerOneScore);
@@ -335,3 +352,11 @@ function Jeopardy() {
     document.location = "round-2.html";
   });
 }
+
+//ends round if all tiles have been selected *** need to add functionality to go to round 2 ***
+// if (questionCount === 3) {
+//   alert("Round 1 over!");
+//   sessionStorage.setItem("playerOneScore", playerOneScore);
+//   sessionStorage.setItem("playerTwoScore", playerTwoScore);
+//   document.location = "round-2.html";
+// }
