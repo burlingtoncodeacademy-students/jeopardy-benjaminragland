@@ -26,14 +26,14 @@ let timedOut = 0;
 //document method declarations
 let gridContainer = document.getElementById("grid-container");
 let clicked = Array.from(document.getElementsByClassName("dollarValue"));
-let disabledGuess = document.getElementById("roundOneGuess");
-let disabledPass = document.getElementById("roundOnePass");
+let disabledGuess = document.getElementById("roundTwoGuess");
+let disabledPass = document.getElementById("roundTwoPass");
 let turn = document.getElementById("player-turn");
 let playerOne = document.getElementById("playerOne");
 let playerTwo = document.getElementById("playerTwo");
 let answerInput = document.getElementById("answerInput");
-let playerGuess = document.getElementById("roundOneGuess");
-let playerPass = document.getElementById("roundOnePass");
+let playerGuess = document.getElementById("roundTwoGuess");
+let playerPass = document.getElementById("roundTwoPass");
 let roundTwoStart = document.getElementById("round-two");
 
 //functions to disable and enable pass and guess buttons
@@ -186,9 +186,10 @@ function Jeopardy() {
     clicked.forEach((element) => {
       element.addEventListener("click", function (evt) {
         clickedItem = this.id;
+        console.log(clickedItem);
         questionFill = document.getElementById(clickedItem);
 
-        thisItem = findItem(roundOneCategories);
+        thisItem = findItem(roundTwoCategories);
         styler(questionFill);
         questionFill.textContent = thisItem.question;
         enableButtons();
@@ -327,8 +328,8 @@ function Jeopardy() {
     }
   });
 
-  roundTwoStart.addEventListener("click", (evt) => {
-    document.location = "round-2.html?" + playerOneScore;
-    evt.preventDefault();
-  });
+  //   roundTwoStart.addEventListener("click", (evt) => {
+  //     document.location = "round-2.html?" + playerOneScore;
+  //     evt.preventDefault();
+  //   });
 }
