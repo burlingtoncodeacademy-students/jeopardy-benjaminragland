@@ -23,22 +23,24 @@ let finalJeopardyQuestion = {
   id: "finalJeopardy",
   category: "Medical Technology",
   question: "EKG stands for this medical procedure.",
-  answer: "What is electrocardiogram",
+  answer: "what is electrocardiogram",
 };
-function wagerCheck(wager, score) {
-  if (isNaN(wager)) {
-    alert("Please only enter a valid integer!");
-    playerOneWagerInput.value = "";
-    playerTwoWagerInput.value = "";
-  } else if (wager > score) {
-    alert("You cannot wager more than your total score!");
-    playerOneWagerInput.value = "";
-    playerTwoWagerInput.value = "";
-  } else {
-    playerOneWagerInput.value = "";
-    playerTwoWagerInput.value = "";
-  }
-}
+
+// ***need to implement function
+// function wagerCheck(wager, score) {
+//   if (isNaN(wager)) {
+//     alert("Please only enter a valid integer!");
+//     playerOneWagerInput.value = "";
+//     playerTwoWagerInput.value = "";
+//   } else if (wager > score) {
+//     alert("You cannot wager more than your total score!");
+//     playerOneWagerInput.value = "";
+//     playerTwoWagerInput.value = "";
+//   } else {
+//     playerOneWagerInput.value = "";
+//     playerTwoWagerInput.value = "";
+//   }
+// }
 
 //gameplay for final Jeopardy begins
 finalJeopardy();
@@ -87,11 +89,42 @@ function finalJeopardy() {
     playerTwoAnswerSubmit.disabled = false;
   });
 
-  //assigns playerTwo answer to variable. reveals final answer
+  //assigns playerTwo answer to variable. reveals final answer. calls finalScores function
   playerTwoAnswerSubmit.addEventListener("click", (evt) => {
     evt.preventDefault();
     playerTwoAnswer = playerTwoAnswerInput.value.toLowerCase();
     playerTwoAnswerSubmit.disabled = true;
     finalQuestion.textContent = finalJeopardyQuestion.answer;
+    finalScores();
   });
+
+  function finalScores() {
+    //checks playerOne answer and adjusts score
+    if (playerOneAnswer === finalJeopardyQuestion.answer) {
+      playerOneScore += playerOneWager;
+      playerOne.textContent = `Player One Score: ${playerOneScore}`;
+    } else {
+      playerOneScore -= playerOneWager;
+      playerOne.textContent = `Player One Score: ${playerOneScore}`;
+    }
+
+    //checks playerTwo answer and adjusts score
+    if (playerTwoAnswer === finalJeopardyQuestion.answer) {
+      playerTwoScore += playerTwoWager;
+      playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
+    } else {
+      playerTwoScore -= playerTwoWager;
+      playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
+    }
+
+    // checks to see who winner is and ends game with winner announcement
+    if (playerOneScore > playerTwoScore) {
+      finalQuestion.textContent = "Player One Wins!!! Thank you for playing!";
+    } else if (playerOneScore === playerTwoScore) {
+      finalQuestion.textContent =
+        "You had a tie! Crazy luck! You're both winners!";
+    } else {
+      finalQuestion.textContent = "Player Two Wins!!! Thank you for playing!";
+    }
+  }
 }
