@@ -12,25 +12,46 @@
   <body class="fade-in">
     <h1 class="headerOne">Final Jeopardy</h1>
 
-    <!-- main flex container for all elements   -->
+    <!-- flex container for final question and category   -->
     <div id="final-flex-container">
       <div class="final-category">
-        <p class="final-category-text">Final Category</p>
+        <p class="final-category-text">Medical Technology</p>
       </div>
       <div class="final-answer">
-        <p class="final-answer-text">
-          This is the answer that you will have to figure out the question to...
-        </p>
-      </div>
-      <div id="final-bet-container">
-        <form class="final-input" action="">
-          <input type="text" placeholder="Your wager..." />
-          <input class="input-margin" type="text" placeholder="What is?..." />
-        </form>
-        <form class="final-button" action="">
-          <button class="final-bet-button" disabled>Guess</button>
-        </form>
+        <p id="finalQuestionDiv" class="final-answer-text"></p>
       </div>
     </div>
+
+    <!-- flex container for wagers and final answers -->
+    <div id="final-bet-container">
+      <form class="final-input" action="">
+        <h2 id="playerOne" class="playerScore">Player One: Score</h2>
+        <input id="playerOneWager" type="text" placeholder="Your wager..." />
+        <input id="playerOneAnswer" type="text" placeholder="What is?..." />
+        <button id="playerOneWagerSubmit" class="final-bet-button">
+          Wager
+        </button>
+        <button id="playerOneAnswerSubmit" class="final-bet-button">
+          Answer
+        </button>
+      </form>
+
+      <form class="final-input" action="">
+        <h2 id="playerTwo" class="playerScore">Player Two: Score</h2>
+        <input id="playerTwoWager" type="text" placeholder="Your wager..." />
+        <input id="playerTwoAnswer" type="text" placeholder="What is?..." />
+        <button id="playerTwoWagerSubmit" class="final-bet-button">
+          Wager
+        </button>
+        <button id="playerTwoAnswerSubmit" class="final-bet-button">
+          Answer
+        </button>
+      </form>
+    </div>
+    <script src="scripts/final-jeopardy.js"></script>
   </body>
 </html>
+<!-- <div class="question-box">
+        <h2 id="playerOne" class="playerScore">Player One: Score</h2>
+        <h2 id="playerTwo" class="playerScore">Player Two: Score</h2>
+      </div> -->
