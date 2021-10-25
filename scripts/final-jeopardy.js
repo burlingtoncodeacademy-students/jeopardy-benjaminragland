@@ -49,6 +49,7 @@ function finalJeopardy() {
   playerOneAnswerInput.disabled = true;
   playerTwoAnswerInput.disabled = true;
   playerTwoWagerSubmit.disabled = true;
+  playerTwoAnswerSubmit.disabled = true;
 
   finalQuestion.textContent =
     "Make your wager based on your knowledge of the above category";
@@ -60,7 +61,6 @@ function finalJeopardy() {
     evt.preventDefault();
     playerOneWager = +playerOneWagerInput.value;
     // wagerCheck(playerOneWager,playerOneScore);
-    console.log(playerOneWager);
     playerOneWagerInput.disabled = true;
     playerOneWagerSubmit.disabled = true;
     playerTwoWagerSubmit.disabled = false;
@@ -70,7 +70,6 @@ function finalJeopardy() {
   playerTwoWagerSubmit.addEventListener("click", (evt) => {
     evt.preventDefault();
     playerTwoWager = +playerTwoWagerInput.value;
-    console.log(playerTwoWager);
     // wagerCheck(playerTwoWager,playerTwoScore);
     playerTwoWagerSubmit.disabled = true;
     finalQuestion.textContent = finalJeopardyQuestion.question;
@@ -94,7 +93,6 @@ function finalJeopardy() {
     evt.preventDefault();
     playerTwoAnswer = playerTwoAnswerInput.value.toLowerCase();
     playerTwoAnswerSubmit.disabled = true;
-    finalQuestion.textContent = finalJeopardyQuestion.answer;
     finalScores();
   });
 
@@ -119,12 +117,17 @@ function finalJeopardy() {
 
     // checks to see who winner is and ends game with winner announcement
     if (playerOneScore > playerTwoScore) {
-      finalQuestion.textContent = "Player One Wins!!! Thank you for playing!";
+      finalQuestion.textContent = `
+      The correct answer was: ${finalJeopardyQuestion.answer}
+      Player One Wins!!! Thank you for playing!`;
     } else if (playerOneScore === playerTwoScore) {
-      finalQuestion.textContent =
-        "You had a tie! Crazy luck! You're both winners!";
+      finalQuestion.textContent = `
+      The correct answer was: ${finalJeopardyQuestion.answer}
+      You had a tie! You're both winners!`;
     } else {
-      finalQuestion.textContent = "Player Two Wins!!! Thank you for playing!";
+      finalQuestion.textContent = `
+      The correct answer was: ${finalJeopardyQuestion.answer}
+      Player Two Wins!!! Thank you for playing!`;
     }
   }
 }
