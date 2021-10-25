@@ -82,9 +82,15 @@ function styler(fill) {
 Jeopardy();
 
 function Jeopardy() {
-  // alert("Player one starts the game! Have fun!");
-  //buttons are disabled until player chooses a tile
+  alert(`A few quick notes on gameplay:
+  1) Your answer must begin "What is"
+  2) Your answer does not need a question mark
+  3) Your answer should not have "a" "the" etc
+     ex: "What is a robin" shoud be "what is robin"
+     
+     Player one starts the game! Have fun!`);
 
+  //buttons are disabled until player chooses a tile
   disableButtons();
 
   turn.textContent = `Turn: ${playerTurn}`;
