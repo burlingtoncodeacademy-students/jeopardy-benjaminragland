@@ -26,7 +26,7 @@ let finalJeopardyQuestion = {
   answer: "what is electrocardiogram",
 };
 
-// ***need to implement function
+// ***need to implement function for checking player input for valid integer/valid wager
 // function wagerCheck(wager, score) {
 //   if (isNaN(wager)) {
 //     alert("Please only enter a valid integer!");

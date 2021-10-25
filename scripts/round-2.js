@@ -1,6 +1,6 @@
 //timer variable declarations
 let timerCount = 300;
-let secondCount = 10;
+let secondCount = 15;
 let speed = 1000;
 let countDiv = document.getElementById("timer");
 let guessTimerDiv = document.getElementById("guess-timer");
@@ -105,14 +105,19 @@ function Jeopardy() {
       if (seconds < 10) {
         seconds = "0" + seconds;
       }
+
+      //takes players to final jeopardy if timer runs out. transfers scores
       if (count < 0) {
         clearInterval(interval);
         alert("Time is up for round 1");
+        sessionStorage.setItem("playerOneScore", playerOneScore);
+        sessionStorage.setItem("playerTwoScore", playerTwoScore);
+        document.location = "final-jeopardy.html";
       }
     }
   }
 
-  //function for 5 second guess timer
+  //function for 5 second guess timer ***(made it 15 seconds. It was too hard to read/type/click in 5 seconds...)***
   function guessTimer(count) {
     tick = setInterval(fiveSecondCount, speed);
 
@@ -305,6 +310,7 @@ function Jeopardy() {
         playerTurn = "Player Two";
         turn.textContent = `Turn: ${playerTurn}`;
         disablePassBtn();
+        guessTimer(secondCount);
       } else if (playerTurn === "Player Two") {
         incorrectAnswers++;
         playerTwoScore -= thisItem.amount;
@@ -312,6 +318,7 @@ function Jeopardy() {
         playerTurn = "Player One";
         turn.textContent = `Turn: ${playerTurn}`;
         disablePassBtn();
+        guessTimer(secondCount);
       }
 
       //ends player attempts for current question if both player are incorrect
@@ -320,13 +327,17 @@ function Jeopardy() {
         answerInput.textContent = "";
         disableButtons();
         enableClicks();
+        clearInterval(tick);
       }
     }
     questionCount++;
 
-    //ends round if all tiles have been selected *** need to add functionality to go to round 2 ***
-    if (questionCount === 6) {
-      alert("round over!");
+    //ends round if all tiles have been selected transfers scores to final jeopardy
+    if (questionCount === 30) {
+      alert("Round Two Over!");
+      sessionStorage.setItem("playerOneScore", playerOneScore);
+      sessionStorage.setItem("playerTwoScore", playerTwoScore);
+      document.location = "final-jeopardy.html";
     }
   });
 

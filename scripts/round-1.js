@@ -118,7 +118,7 @@ function Jeopardy() {
     }
   }
 
-  //function for 5 second guess timer
+  //function for 5 second guess timer ***(made it 15 seconds. It was too hard to read/type/click in 5 seconds...)***
   function guessTimer(count) {
     tick = setInterval(fiveSecondCount, speed);
 
@@ -333,13 +333,14 @@ function Jeopardy() {
         answerInput.textContent = "";
         disableButtons();
         enableClicks();
+        clearInterval(tick);
       }
     }
   });
 
   questionCount++;
-  //ends round if all tiles have been selected *** need to add functionality to go to round 2 ***
-  if (questionCount === 4) {
+  //ends round if all tiles have been selected. transfers scores to next round
+  if (questionCount === 30) {
     alert("Round 1 over!");
     sessionStorage.setItem("playerOneScore", playerOneScore);
     sessionStorage.setItem("playerTwoScore", playerTwoScore);
