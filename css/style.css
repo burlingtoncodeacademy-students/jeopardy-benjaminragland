@@ -197,7 +197,7 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 48vh;
   width: 100vw;
 }
 
@@ -210,6 +210,9 @@ input {
 }
 
 .final-answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 46vw;
   height: 22rem;
   background-color: blue;
@@ -220,14 +223,16 @@ input {
 /* styling for final jeopardy forms and inputs for final wager, answer input, and guess button */
 #final-bet-container {
   display: flex;
-  width: 46vw;
+  justify-content: space-around;
+  width: 100vw;
   height: 15rem;
 }
 
 .final-input {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  height: 15vw;
 }
 
 .input-margin {
@@ -241,13 +246,14 @@ input {
 }
 
 .final-bet-button {
-  height: 8.4rem;
+  height: 4emrem;
   width: 15rem;
   background-color: rgb(152, 15, 170);
   color: ghostwhite;
   font-size: 2.5rem;
   border-radius: 5px;
   margin-top: 2rem;
+  margin-left: 1em;
 }
 
 /* text styles for final answer and category */
@@ -260,9 +266,8 @@ input {
 
 .final-answer-text {
   color: ghostwhite;
-  text-align: center;
-  padding-top: 3rem;
   font-size: 3.5rem;
+  text-align: center;
 }
 
 /* animation for fade in of body elements */
