@@ -551,7 +551,7 @@ let roundTwoCategories = [
   },
 ];
 
-let finalJeopardy = [
+let finalJeopardyQuestion = [
   {
     id: "finalJeopardy",
     category: "Medical Technology",

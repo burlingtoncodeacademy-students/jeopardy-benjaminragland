@@ -35,6 +35,7 @@ let answerInput = document.getElementById("answerInput");
 let playerGuess = document.getElementById("roundTwoGuess");
 let playerPass = document.getElementById("roundTwoPass");
 let roundTwoStart = document.getElementById("round-two");
+let startFinal = document.getElementById("finalJeopardyStart");
 
 //functions to disable and enable pass and guess buttons
 function disableButtons() {
@@ -324,13 +325,14 @@ function Jeopardy() {
     questionCount++;
 
     //ends round if all tiles have been selected *** need to add functionality to go to round 2 ***
-    if (questionCount === 60) {
+    if (questionCount === 6) {
       alert("round over!");
     }
   });
 
-  //   roundTwoStart.addEventListener("click", (evt) => {
-  //     document.location = "round-2.html?" + playerOneScore;
-  //     evt.preventDefault();
-  //   });
+  startFinal.addEventListener("click", () => {
+    sessionStorage.setItem("playerOneScore", playerOneScore);
+    sessionStorage.setItem("playerTwoScore", playerTwoScore);
+    document.location = "final-jeopardy.html";
+  });
 }
