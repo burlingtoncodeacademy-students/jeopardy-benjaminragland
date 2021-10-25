@@ -2,6 +2,8 @@
 let playerOneScore = +sessionStorage.getItem("playerOneScore");
 let playerTwoScore = +sessionStorage.getItem("playerTwoScore");
 
+let playerOneWager;
+
 //document method declarations
 let playerOne = document.getElementById("playerOne");
 let playerTwo = document.getElementById("playerTwo");
@@ -17,30 +19,79 @@ let playerTwoAnswerInput = document.getElementById("playerTwoAnswer");
 let playerTwoWagerSubmit = document.getElementById("playerTwoWagerSubmit");
 let playerTwoAnswerSubmit = document.getElementById("playerTwoAnswerSubmit");
 
-let finalJeopardyQuestion = [
-  {
-    id: "finalJeopardy",
-    category: "Medical Technology",
-    question: "EKG stands for this medical procedure.",
-    answer: "What is electrocardiogram",
-  },
-];
+let finalJeopardyQuestion = {
+  id: "finalJeopardy",
+  category: "Medical Technology",
+  question: "EKG stands for this medical procedure.",
+  answer: "What is electrocardiogram",
+};
+function wagerCheck(wager, score) {
+  if (isNaN(wager)) {
+    alert("Please only enter a valid integer!");
+    playerOneWagerInput.value = "";
+    playerTwoWagerInput.value = "";
+  } else if (wager > score) {
+    alert("You cannot wager more than your total score!");
+    playerOneWagerInput.value = "";
+    playerTwoWagerInput.value = "";
+  } else {
+    playerOneWagerInput.value = "";
+    playerTwoWagerInput.value = "";
+  }
+}
 
 //gameplay for final Jeopardy begins
 finalJeopardy();
 function finalJeopardy() {
   //disables final answer guess input until wager is made
-  playerOneAnswer.disabled = true;
-  playerTwoAnswer.disabled = true;
+  playerOneAnswerInput.disabled = true;
+  playerTwoAnswerInput.disabled = true;
+  playerTwoWagerSubmit.disabled = true;
 
   finalQuestion.textContent =
     "Make your wager based on your knowledge of the above category";
   playerOne.textContent = `Player One Score: ${playerOneScore}`;
   playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
 
+  //assigns playerOne wager to variable. enables buttons for playerTwo to wager
   playerOneWagerSubmit.addEventListener("click", (evt) => {
-    playerOneAnswer = playerOneWagerInput.value;
-    console.log(playerOneAnswer);
     evt.preventDefault();
+    playerOneWager = +playerOneWagerInput.value;
+    // wagerCheck(playerOneWager,playerOneScore);
+    console.log(playerOneWager);
+    playerOneWagerInput.disabled = true;
+    playerOneWagerSubmit.disabled = true;
+    playerTwoWagerSubmit.disabled = false;
+  });
+
+  //assigns playerTwo wager to variable. enables buttons for playerOne to guess answer. reveals final question
+  playerTwoWagerSubmit.addEventListener("click", (evt) => {
+    evt.preventDefault();
+    playerTwoWager = +playerTwoWagerInput.value;
+    console.log(playerTwoWager);
+    // wagerCheck(playerTwoWager,playerTwoScore);
+    playerTwoWagerSubmit.disabled = true;
+    finalQuestion.textContent = finalJeopardyQuestion.question;
+    playerTwoWagerInput.disabled = true;
+    playerOneAnswerInput.disabled = false;
+    playerTwoAnswerInput.disabled = false;
+    playerTwoAnswerSubmit.disabled = true;
+  });
+
+  //assigns playerOne answer to variable. enables buttons for player two to answer
+  playerOneAnswerSubmit.addEventListener("click", (evt) => {
+    evt.preventDefault();
+    playerOneAnswer = playerOneAnswerInput.value.toLowerCase();
+    playerOneAnswerSubmit.disabled = true;
+    playerOneAnswerInput.disabled = true;
+    playerTwoAnswerSubmit.disabled = false;
+  });
+
+  //assigns playerTwo answer to variable. reveals final answer
+  playerTwoAnswerSubmit.addEventListener("click", (evt) => {
+    evt.preventDefault();
+    playerTwoAnswer = playerTwoAnswerInput.value.toLowerCase();
+    playerTwoAnswerSubmit.disabled = true;
+    finalQuestion.textContent = finalJeopardyQuestion.answer;
   });
 }
