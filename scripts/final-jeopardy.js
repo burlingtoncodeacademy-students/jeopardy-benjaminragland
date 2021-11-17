@@ -3,6 +3,7 @@ let playerOneScore = +sessionStorage.getItem("playerOneScore");
 let playerTwoScore = +sessionStorage.getItem("playerTwoScore");
 
 let playerOneWager;
+let validInput = false;
 
 //document method declarations
 let playerOne = document.getElementById("playerOne");
@@ -47,6 +48,8 @@ finalJeopardy();
 function finalJeopardy() {
   //disables final answer guess input until wager is made
   playerOneAnswerInput.disabled = true;
+  playerTwoWagerInput.disabled = true;
+  playerOneAnswerSubmit.disabled = true;
   playerTwoAnswerInput.disabled = true;
   playerTwoWagerSubmit.disabled = true;
   playerTwoAnswerSubmit.disabled = true;
@@ -57,13 +60,15 @@ function finalJeopardy() {
   playerTwo.textContent = `Player Two Score: ${playerTwoScore}`;
 
   //assigns playerOne wager to variable. enables buttons for playerTwo to wager
+
   playerOneWagerSubmit.addEventListener("click", (evt) => {
     evt.preventDefault();
     playerOneWager = +playerOneWagerInput.value;
-    // wagerCheck(playerOneWager,playerOneScore);
+    // wagerCheck(playerOneWager, playerOneScore);
     playerOneWagerInput.disabled = true;
     playerOneWagerSubmit.disabled = true;
     playerTwoWagerSubmit.disabled = false;
+    playerTwoWagerInput.disabled = false;
   });
 
   //assigns playerTwo wager to variable. enables buttons for playerOne to guess answer. reveals final question
@@ -75,7 +80,7 @@ function finalJeopardy() {
     finalQuestion.textContent = finalJeopardyQuestion.question;
     playerTwoWagerInput.disabled = true;
     playerOneAnswerInput.disabled = false;
-    playerTwoAnswerInput.disabled = false;
+    playerOneAnswerSubmit.disabled = false;
     playerTwoAnswerSubmit.disabled = true;
   });
 
@@ -86,6 +91,7 @@ function finalJeopardy() {
     playerOneAnswerSubmit.disabled = true;
     playerOneAnswerInput.disabled = true;
     playerTwoAnswerSubmit.disabled = false;
+    playerTwoAnswerInput.disabled = false;
   });
 
   //assigns playerTwo answer to variable. reveals final answer. calls finalScores function
