@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final Jeopardy</title>
-</head>
-<body>
-  <h1>Final Jeopardy</h1>
-</body>
+<html class="game-background" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeopardy</title>
+    <!-- audio currently disabled. Will add JS funtion to play when question appears next phase -->
+    <audio src="./audio/Jeopardy-theme-song/Jeopardy-theme-song.mp3"></audio>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="fade-in">
+    <h1 class="headerOne">Final Jeopardy</h1>
+
+    <!-- flex container for final question and category   -->
+    <div id="final-flex-container">
+      <div class="final-category">
+        <p class="final-category-text">Medical Technology</p>
+      </div>
+      <div class="final-answer">
+        <p id="finalQuestionDiv" class="final-answer-text"></p>
+      </div>
+    </div>
+
+    <!-- flex container for wagers and final answers -->
+    <div id="final-bet-container">
+      <form class="final-input" action="">
+        <h2 id="playerOne" class="playerScore">Player One: Score</h2>
+        <input id="playerOneWager" type="text" placeholder="Your wager..." />
+        <input id="playerOneAnswer" type="text" placeholder="What is?..." />
+        <button id="playerOneWagerSubmit" class="final-bet-button">
+          Wager
+        </button>
+        <button id="playerOneAnswerSubmit" class="final-bet-button">
+          Answer
+        </button>
+      </form>
+
+      <form class="final-input" action="">
+        <h2 id="playerTwo" class="playerScore">Player Two: Score</h2>
+        <input id="playerTwoWager" type="text" placeholder="Your wager..." />
+        <input id="playerTwoAnswer" type="text" placeholder="What is?..." />
+        <button id="playerTwoWagerSubmit" class="final-bet-button">
+          Wager
+        </button>
+        <button id="playerTwoAnswerSubmit" class="final-bet-button">
+          Answer
+        </button>
+      </form>
+    </div>
+    <script src="scripts/final-jeopardy.js"></script>
+  </body>
 </html>
+<!-- <div class="question-box">
+        <h2 id="playerOne" class="playerScore">Player One: Score</h2>
+        <h2 id="playerTwo" class="playerScore">Player Two: Score</h2>
+      </div> -->

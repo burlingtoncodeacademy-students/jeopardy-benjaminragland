@@ -1,0 +1,285 @@
+/* global styles for all pages*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: gyparody;
+}
+
+.fade-in {
+  animation: fade-in 2s;
+}
+
+:root {
+  --font-size: 16px;
+}
+
+/* ~~~~~~~~~~~~~~~ styles for index.html ~~~~~~~~~~~~~~~ */
+html {
+  background: url(../img/alex-trebek.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* flex container for welcome message and start button */
+.container {
+  flex-direction: column;
+  display: flex;
+  height: 90vh;
+  width: 100vw;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.rounded-div {
+  background-color: blue;
+  border-radius: 0.5em;
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+h1 {
+  font-size: 5em;
+  color: whitesmoke;
+  padding: 0.25em;
+}
+
+.start-button {
+  width: 20em;
+  height: 3em;
+  border-radius: 10px;
+  margin: 3em;
+  background-color: rgb(152, 15, 170);
+  font-size: 1.6em;
+  color: whitesmoke;
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+/* ~~~~~~~~~~~~~~~ styles for round-1.html & round-2.html ~~~~~~~~~~~~~~~ */
+
+.game-background {
+  background: url(../img/jeopardy-background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.headerOne {
+  font-size: 3rem;
+  text-decoration: underline;
+  text-align: center;
+}
+
+#grid-container {
+  display: grid;
+  background-color: blue;
+  width: 80vw;
+  min-height: 62vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+  border: 3px solid black;
+}
+
+.category {
+  color: whitesmoke;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-top: 1.5em;
+}
+
+.dollarValue {
+  display: flex;
+  align-items: center;
+  color: goldenrod;
+  font-size: 3.5rem;
+}
+
+.question-box {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  padding-top: 1rem;
+  margin-bottom: 1em;
+}
+
+input {
+  height: 2.5rem;
+  width: 20rem;
+  border-radius: 5px;
+  padding: 1.5rem 1rem;
+  font-size: 1.5rem;
+  color: #333;
+  border: 4px solid goldenrod;
+}
+
+.playerScore {
+  font-size: 1.25rem;
+  color: whitesmoke;
+  padding: 1rem 5rem;
+}
+
+/* Plain to make red and green border alternate with JS in next phase to indicate turns */
+/* #playerOneTurn {
+  border: 3px solid green;
+  border-radius: 5px;
+}
+
+#playerTwoTurn {
+  border: 3px solid red;
+  border-radius: 5px;
+} */
+
+#player-turn {
+  height: 1.5em;
+  width: 8.5em;
+  margin-left: 2em;
+  text-align: center;
+}
+
+.guessPass {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.playerButtons {
+  height: 2.5rem;
+  width: 8rem;
+  margin: 0 1rem;
+  background-color: rgb(152, 15, 170);
+  color: ghostwhite;
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+
+.continue {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+
+#timer {
+  font-size: 3em;
+  color: ghostwhite;
+  margin-top: 0.25em;
+}
+
+#guess-timer {
+  font-size: 3em;
+  color: red;
+  margin-top: 0.25em;
+}
+
+.nextRound {
+  background-color: rgb(152, 15, 170);
+  color: ghostwhite;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: 0.2rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ styles for final jeopardy ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* flex containerx for final jeopardy answer and category*/
+#final-flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 48vh;
+  width: 100vw;
+}
+
+.final-category {
+  width: 46vw;
+  height: 4rem;
+  background-color: blue;
+  border: 2px solid;
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+.final-answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46vw;
+  height: 22rem;
+  background-color: blue;
+  border: 2px solid;
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+/* styling for final jeopardy forms and inputs for final wager, answer input, and guess button */
+#final-bet-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 15rem;
+}
+
+.final-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 15vw;
+}
+
+.input-margin {
+  margin-top: 1.5rem;
+}
+.final-button {
+  width: inherit;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.final-bet-button {
+  height: 4emrem;
+  width: 15rem;
+  background-color: rgb(152, 15, 170);
+  color: ghostwhite;
+  font-size: 2.5rem;
+  border-radius: 5px;
+  margin-top: 2rem;
+  margin-left: 1em;
+}
+
+/* text styles for final answer and category */
+.final-category-text {
+  color: ghostwhite;
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 0.8rem;
+}
+
+.final-answer-text {
+  color: ghostwhite;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+/* animation for fade in of body elements */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#question1 {
+  font-size: 0.4em;
+}

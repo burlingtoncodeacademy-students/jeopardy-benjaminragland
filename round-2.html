@@ -1,12 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeopardy</title>
-</head>
-<body>
-  <h1>Double Jeopardy</h1>
-</body>
+<html class="game-background" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeopardy</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./scripts/jeopardy-object.js"></script>
+  </head>
+  <body class="fade-in">
+    <h1 class="headerOne">Jeopardy: Round Two</h1>
+    <div id="grid-container" class="rounded-div">
+      <!-- divs for jeopardy game board -->
+
+      <!-- category divs -->
+      <div class="grid-item category">
+        <p>Comfort Foods from North of the Mason-Dixon Line</p>
+      </div>
+      <div class="grid-item category"><p>Simply Red</p></div>
+      <div class="grid-item category"><p>Male Order</p></div>
+      <div class="grid-item category"><p>Fall in Line with Fall</p></div>
+      <div class="grid-item category"><p>Happy Birthday, October Baby</p></div>
+      <div class="grid-item category"><p>It Happened One October</p></div>
+
+      <!-- dollar value divs -->
+      <div id="Cat7Quest1" class="grid-item dollarValue"><p>$400</p></div>
+      <div id="Cat8Quest1" class="grid-item dollarValue"><p>$400</p></div>
+      <div id="Cat9Quest1" class="grid-item dollarValue"><p>$400</p></div>
+      <div id="Cat10Quest1" class="grid-item dollarValue"><p>$400</p></div>
+      <div id="Cat11Quest1" class="grid-item dollarValue"><p>$400</p></div>
+      <div id="Cat12Quest1" class="grid-item dollarValue"><p>$400</p></div>
+      <div id="Cat7Quest2" class="grid-item dollarValue"><p>$800</p></div>
+      <div id="Cat8Quest2" class="grid-item dollarValue"><p>$800</p></div>
+      <div id="Cat9Quest2" class="grid-item dollarValue"><p>$800</p></div>
+      <div id="Cat10Quest2" class="grid-item dollarValue"><p>$800</p></div>
+      <div id="Cat11Quest2" class="grid-item dollarValue"><p>$800</p></div>
+      <div id="Cat12Quest2" class="grid-item dollarValue"><p>$800</p></div>
+      <div id="Cat7Quest3" class="grid-item dollarValue"><p>$1200</p></div>
+      <div id="Cat8Quest3" class="grid-item dollarValue"><p>$1200</p></div>
+      <div id="Cat9Quest3" class="grid-item dollarValue"><p>$1200</p></div>
+      <div id="Cat10Quest3" class="grid-item dollarValue"><p>$1200</p></div>
+      <div id="Cat11Quest3" class="grid-item dollarValue"><p>$1200</p></div>
+      <div id="Cat12Quest3" class="grid-item dollarValue"><p>$1200</p></div>
+      <div id="Cat7Quest4" class="grid-item dollarValue"><p>$1600</p></div>
+      <div id="Cat8Quest4" class="grid-item dollarValue"><p>$1600</p></div>
+      <div id="Cat9Quest4" class="grid-item dollarValue"><p>$1600</p></div>
+      <div id="Cat10Quest4" class="grid-item dollarValue"><p>$1600</p></div>
+      <div id="Cat11Quest4" class="grid-item dollarValue"><p>$1600</p></div>
+      <div id="Cat12Quest4" class="grid-item dollarValue"><p>$1600</p></div>
+      <div id="Cat7Quest5" class="grid-item dollarValue"><p>$2000</p></div>
+      <div id="Cat8Quest5" class="grid-item dollarValue"><p>$2000</p></div>
+      <div id="Cat9Quest5" class="grid-item dollarValue"><p>$2000</p></div>
+      <div id="Cat10Quest5" class="grid-item dollarValue"><p>$2000</p></div>
+      <div id="Cat11Quest5" class="grid-item dollarValue"><p>$2000</p></div>
+      <div id="Cat12Quest5" class="grid-item dollarValue"><p>$2000</p></div>
+    </div>
+
+    <!-- divs for question input and guess/pass buttons -->
+    <div class="question-box">
+      <h2 id="playerOne" class="playerScore">Player One: Score</h2>
+      <input id="answerInput" type="text" placeholder="What is?..." />
+      <h2 id="playerTwo" class="playerScore">Player Two: Score</h2>
+    </div>
+
+    <!-- buttons for guess and pass -->
+    <div class="guessPass">
+      <button id="roundTwoGuess" class="playerButtons">Guess</button>
+      <button id="roundTwoPass" class="playerButtons">Pass</button>
+    </div>
+
+    <!-- button to continue to double jeopardy -->
+    <div class="continue">
+      <div id="player-turn" class="nextRound"></div>
+      <div id="timer"></div>
+      <div id="guess-timer"></div>
+      <button id="finalJeopardyStart" class="nextRound">Final Jeopardy</button>
+    </div>
+    <script src="./scripts/round-2.js"></script>
+  </body>
 </html>
